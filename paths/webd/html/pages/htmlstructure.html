@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo page</title>
+        <link rel="stylesheet" href="../styles/basic.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>CJ knows HTML</h1>
+            <blocckquote>................This is where you learn HTML</blocckquote>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Tutorials</a>
+                <a href="#">Playground</a>
+                <a href="#">About us</a>
+            </nav>
+            <section class="content_section">
+                <article class="html_structure">
+                    <h3>The basic stucture of HTML</h3>
+                    <blockquote>HTML describes the structure of a web page. And the stucture of HTML consists of series of
+                        <a href="#" class="content_text_links" title="Discussed in coming section">elements</a>. These elements will convey to the browser, how the content of the page is expected to be displayed. A simple HTML document can be represented by:
+                    </blockquote>
+                    <pre class="example">
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html lang="en"&gt;
+                        &lt;head&gt;
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                            &lt;title&gt;Document&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;h1&gt;This is the main heading&lt;/h1&gt;
+                            &lt;p&gt;This is the text content&lt;/p&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </pre>
+
+                </article>
+
+                <table>
+                    <caption>Lets depict the above code line by line</caption>
+                    <tr>
+                        <th>Line</th>
+                        <th>Explaination</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;!DOCTYPE html&gt;</td>
+                        <td>This is the declaration that defines this document as a HTML5 documetn</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;html lang="en"&gt;</td>
+                        <td>html is the root element of the page with an
+                            <a href="#" class="content_text_links" title="Discussed in the coming section.">attribute</a>
+                            lang, which decribes the language of the content as "en", which is english.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;head&gt;</td>
+                        <td>All the meta information of the web page is confined in the head tag.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;meta charset="UTF-8"&gt;</td>
+                        <td>Meta is a HTML tag that contains metadata about a web page, or more specifically, descriptors that tell search engines what type of content a web page contains that is hidden from display. charset is an HTML attribute that defines the character encoding for your browser to use when displaying the website content. utf-8 is a specific character encoding. Basically, this line tells the browser to use the utf-8 character encoding when translating machine code into human-readable text and vice versa to be displayed in the browser.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</td>
+                        <td>The viewport is the user's visible area of a web page. The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen. This line gives the browser instructions on how to control the page's dimensions and scaling. The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device). The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;title&gt;</td>
+                        <td>Title element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;body&gt;</td>
+                        <td>Body element lement defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;h1&gt;</td>
+                        <td>h1 element describes the largest and most important heading on the page.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;p1&gt;</td>
+                        <td>p element contains the text. It defines the paragraph content.</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="prenext_section">
+                <a href="../index.html">Previous</a>
+                <a href="elements.html">Next</a>
+            </section>
+        </header>
+        <aside>
+            <ul>
+                <li><a href="../index.html">HTML Home</a></li>
+                <li><a href="#">HTML Structure</a></li>
+                <li><a href="elements.html">Elements, tags and attributes</a></li>
+                <li><a href="images.html">Images</a></li>
+            </ul>
+        </aside>
+    </body>
+</html>
