@@ -36,12 +36,25 @@
                         The HTML picture element gives web developers more flexibility in specifying image resources.  The picture element contains one or more source elements, each referring to different images through the srcset attribute. This way the browser can choose the image that best fits the current view and/or device. Each source element has a media attribute that defines when the image is the most suitable.
                     </blockquote>
                     <pre class="example">
+                        <code>
                         &lt;picture&gt;
                             &lt;source media="(min-width: 650px)" srcset="img_food.jpg"&gt;
                             &lt;source media="(min-width: 465px)" srcset="img_car.jpg"&gt;
                             &lt;img src="img_girl.jpg"&gt;
-                        &lt;/picture&gt;
+                        &lt;/picture&gt;</code>
                     </pre>
+                </article>
+                <article class="figure">
+                    <h3>Figure and Figure caption</h3>
+                    <blockquote>
+                        The figure tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc. The figcaption tag defines a caption for a figure element. The figcaption element can be placed as the first or as the last child of a figure element. The img element defines the actual image/illustration.
+                    </blockquote>
+                    <pre><code>
+                        &lt;figure&gt;
+                            &lt;img src="pic_trulli.jpg" alt="Trulli"&gt;
+                            &lt;figcaption&gt;Fig1. - Trulli, Puglia, Italy.&lt;/figcaption&gt;
+                        &lt;/figure&gt;
+                    </code></pre>
                 </article>
                 <article class="favicon">
                     <h3>The Favicon icon</h3>
@@ -49,21 +62,23 @@
                         A favicon is a small image displayed next to the page title in the browser tab.
                     </blockquote>
                     <pre class="example">
-                        &lt;link rel="icon" type="image/x-icon" href="/images/favicon.ico"&gt;
+                        <code>
+                        &lt;link rel="icon" type="image/x-icon" href="/images/favicon.ico"&gt;</code>
                     </pre>
                 </article>
             </section>
             <section class="prenext_section">
                 <a href="elements.html">Previous</a>
-                <a href="#">Next</a>
+                <a href="tables.html">Next</a>
             </section>
         </header>
         <aside>
             <ul>
-                <li><a href="#">HTML Home</a></li>
+                <li><a href="../html_index.html">HTML Home</a></li>
                 <li><a href="htmlstructure.html">HTML Structure</a></li>
                 <li><a href="elements.html">Elements, tags and attributes</a></li>
                 <li><a href="#">Images</a></li>
+                <li><a href="tables.html">Tables & Lists</a></li>
             </ul>
         </aside>
     </body>
