@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linux Directory Structure</title>
+        <link rel="stylesheet" href="../styles/basic.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>CJ Knows Linux</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Tutorials</li>
+                    <li>Certifications</li>
+                    <li>About Us</li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <article class="dirs">
+                <h3>The linux directory structure:</h3>
+                <table>
+                    <caption>Common Linux Directories</caption>
+                    <thead>
+                        <tr>
+                            <th>Directory</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>/</td>
+                            <td>
+                                <strong>
+                                    <em>Root</em>
+                                </strong>. Everything starts at root.</td>
+                        </tr>
+                        <tr>
+                            <td>/bin</td>
+                            <td>Binary files and other executable programs are stored here. Programs are written in source code which are in human readable text. These text files are compiled into machine readable binaries i.e., 0s and 1s. The applications that we run are stored here.</td>
+                        </tr>
+                        <tr>
+                            <td>/etc</td>
+                            <td>System configuration files that controls the OS and other applications behavior are stored here.</td>
+                        </tr>
+                        <tr>
+                            <td>/home</td>
+                            <td>User directoriesare stored here for all the users.</td>
+                        </tr>
+                        <tr>
+                            <td>/opt</td>
+                            <td>Optional 3<sup>rd</sup>
+                                party scripts that are not bundled with the operating system are found here.</td>
+                        </tr>
+                        <tr>
+                            <td>/tmp</td>
+                            <td>This is a temporary space which is cleared on reboot.</td>
+                        </tr>
+                        <tr>
+                            <td>/usr</td>
+                            <td>User selected programs live here.</td>
+                        </tr>
+                        <tr>
+                            <td>/var</td>
+                            <td>Contains files / data that often change.
+                                <code class="example">ex: log files</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>/boot</td>
+                            <td>Files that are required to start or reboot OS, including the Kernel, are present here.</td>
+                        </tr>
+                        <tr>
+                            <td>/dev</td>
+                            <td>Device files, which are controlled by OS and system administrators are present here.</td>
+                        </tr>
+                        <tr>
+                            <td>/cgroup</td>
+                            <td>The control group hierarchy.</td>
+                        </tr>
+                        <tr>
+                            <td>/lib</td>
+                            <td>The system libraries.</td>
+                        </tr>
+                        <tr>
+                            <td>/export</td>
+                            <td>The shared file system.</td>
+                        </tr>
+                        <tr>
+                            <td>/sbin</td>
+                            <td>System administration binaries.</td>
+                        </tr>
+                        <tr>
+                            <td>/proc</td>
+                            <td>Provides information on running processes.</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                <strong>Note:</strong>
+                                <ul>
+                                    <li>All the above directories are the top level directories.</li>
+                                    <li>The applications installed by user mostly reside either in /usr or /opt.</li>
+                                    <li>For applications installed, there can be sub-directories with the same convention and the directories have the same usage. Difference is that the scope is limited to that particular application.
+                                        <code class="example">ex: /usr/local/appName/bin directory has the binaries for the particular application, "appName".</code>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+        </section>
+        <section class="prenext">
+            <a href="../linux_index.html">Prev</a>
+            <a href="./cmds.html">Next</a>
+        </section>
+        <aside>
+            <ul>
+                <li><a href="../linux_index.html">Linux Home</a></li>
+                <li><a href="#">Linux Directory Structure</a></li>
+                <li><a href="cmds.html">Useful Commands</a></li>
+            </ul>
+        </aside>
+        <footer>
+            <h3>I have learnt Linux from
+                <em>Mr. Colt steele</em>
+                through his awesome course on Udemy - The linux command line bootcamp: Beginner to power user.</h3>
+            <p>As the course's title emphasises, the course helps the learner to understand the basics and apply the knowledge using GNU/Linux as their everyday operating system. In this Tutorials, I'm only including the basic concepts and the course has much more than the content presented in this Tutorials.</p>
+            <p>This Tutorials is just a personal practice but still have the content necessary for readers to get started with GNU/Linux.</p>
+        </footer>
+    </body>
+</html>

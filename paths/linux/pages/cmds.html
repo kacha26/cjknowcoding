@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Useful linux commands</title>
+        <link rel="stylesheet" href="../styles/basic.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>CJ Knows Linux</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Tutorials</li>
+                    <li>Certifications</li>
+                    <li>About Us</li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <article class="cmds">
+                <h3>Linux command structure:</h3>
+                <code>cmd -options arguments</code>
+            </article>
+            <article class="types">
+                <h3>Types of commands:</h3>
+                <ol>
+                    <li>Executable programs: These are compiled binary files present in directories like /bin, /usr/bin, /usr/local/bin etc.</li>
+                    <li>Built in shell commands: These commands are part of shell.</li>
+                    <li>Shell functions</li>
+                    <li>Aliases</li>
+                </ol>
+                <table>
+                    <caption>Useful commands</caption>
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>man</td>
+                            <td>Displays manual for a particular command.
+                                <code>ex: man ls</code>. Can also be used to display manual for a key word using
+                                <code>man -k key_word</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>which</td>
+                            <td>To find the exact location of an executable. This wont work for built in commands or aliases.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                help
+                            </td>
+                            <td>Some commands dont have man pages as they are built directly into shell. Documentation for such commands can be displayed by running
+                                <code>cmd --help or cmd -h</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>Displays user and all the groups that the user is part of.</td>
+                        </tr>
+                        <tr>
+                            <td>groups</td>
+                            <td>Displays all the groups that the user is part of.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article class="permissions">
+                <h3>Permissions in Linux</h3>
+                <p>The permission to read (r), write (w) and execute (x) a particular file / directory can be alter for users (u), groups (g), others (o) and together as all (a = u + g + o). This can be done by setting (=), adding (+) and removing (-) rwx for ugoa using
+                    <code>chmod</code>
+                    command.</p>
+                <code>examples:
+                    <ul>
+                        <li>chmod u=rwx file.txt</li>
+                        <li>chmod g-rx file.txt</li>
+                        <li>chmod o+x file.txt</li>
+                        <li>chmod a-w file.txt</li>
+                    </ul>
+                </code>
+                <table>
+                    <caption>Useful commands</caption>
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>chgroup</td>
+                            <td>Changes the group</td>
+                        </tr>
+                        <tr>
+                            <td>chown</td>
+                            <td>chown command is used to change the file Owner or group.
+                                <code>chown [OPTION]… [OWNER][:GROUP] FILE…</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>addgroup</td>
+                            <td>adds a new group.
+                                <code>addgroup groupname</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>adduser</td>
+                            <td>Adds user to a particular group.
+                                <code>adduser username groupname</code>.
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                <strong>File creation mask:</strong>
+                                <ul>
+                                    <li>It determines the default permissions. 777 for directories and 666 for files.</li>
+                                    <li>
+                                        <code>umask 022</code>
+                                        This command set permission as 755 which is 777-022</li>
+                                    <li>
+                                        <code>unmask</code>
+                                        command displays 4 digits instead of 3 (ugo). The first digit is for special mode which can be
+                                        <code>setuid / setgid / sticky</code>.</li>
+                                    <li>umask is opposite of chmod</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+            <article class="useful-cmds">
+                <h3>Other useful Commands:</h3>
+                <p>Below are some of other linux commands that can come handy in everyday usage:</p>
+                <table class="simple-cmds">
+                    <caption>Everyday linux commands</caption>
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Options</th>
+                            <th>Arguments</th>
+                            <th>Usage</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>cal</td>
+                            <td></td>
+                            <td></td>
+                            <td>Displays calendar of current month</td>
+                            <td>
+                                <code>
+                                    <pre>[16:03]:~ % cal
+      July 2023     
+Su Mo Tu We Th Fr Sa
+                   1
+ 2  3  4  5  6  7  8
+ 9 10 11 12 13 14 15
+16 17 18 19 20 21 22
+23 24 25 26 27 28 29
+30 31     </pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>date</td>
+                            <td></td>
+                            <td></td>
+                            <td>Displays current date and time.</td>
+                            <td>
+                                <code>
+                                    <pre>{18:03}~ ➭ date
+Saturday 22 July 2023 06:07:47 PM IST</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>echo</td>
+                            <td></td>
+                            <td>Any text</td>
+                            <td>The echo command is extremely simple. It takes the
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                arguments we provide to it and prints them out. It echoes
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                them back at us.</td>
+                            <td>
+                                <code>
+                                    <pre>{18:14}~ ➭ echo echoThisBack
+echoThisBack</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ls</td>
+                            <td>-l</td>
+                            <td></td>
+                            <td>Displays the contents of the current working directory</td>
+                            <td>
+                                <code>
+                                    <pre>{18:18}~ ➭ ls -l
+total 56
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Desktop
+drwxr-xr-x 2 cj cj 4096 Apr  7 15:13 Documents
+drwxr-xr-x 3 cj cj 4096 May 20 12:28 Downloads
+-rw-r--r-- 1 cj cj   32 May 28 15:24 file.txt
+drwxr-xr-x 6 cj cj 4096 Jun 10 07:55 learnings
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Music
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Pictures
+drwxr-xr-x 4 cj cj 4096 Apr 11 03:39 project50
+drwxr-xr-x 3 cj cj 4096 Jun 12 20:06 projects
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Public
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Templates
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Videos
+-rw-r--r-- 1 cj cj 2111 May 28 14:57 vimrc-sample
+drwxr-xr-x 6 cj cj 4096 May 28 20:04 vkcf</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>mkdir</td>
+                            <td></td>
+                            <td>Directory name</td>
+                            <td>Creates a new directory in current directory</td>
+                            <td>
+                                <code>
+                                    <pre>{18:20}~ ➭ mkdir testDir 
+{18:57}~ ➭ ls -l
+total 60
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Desktop
+drwxr-xr-x 2 cj cj 4096 Apr  7 15:13 Documents
+drwxr-xr-x 3 cj cj 4096 May 20 12:28 Downloads
+-rw-r--r-- 1 cj cj   32 May 28 15:24 file.txt
+drwxr-xr-x 6 cj cj 4096 Jun 10 07:55 learnings
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Music
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Pictures
+drwxr-xr-x 4 cj cj 4096 Apr 11 03:39 project50
+drwxr-xr-x 3 cj cj 4096 Jun 12 20:06 projects
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Public
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Templates
+drwxr-xr-x 2 cj cj 4096 Jul 22 18:57 testDir
+drwxr-xr-x 2 cj cj 4096 Apr  6 21:29 Videos
+-rw-r--r-- 1 cj cj 2111 May 28 14:57 vimrc-sample
+drwxr-xr-x 6 cj cj 4096 May 28 20:04 vkcf</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>cd</td>
+                            <td></td>
+                            <td>Directory name</td>
+                            <td>Changes directory to given directory.</td>
+                            <td>
+                                <code>
+                                    <pre>{18:57}~ ➭ cd testDir 
+{18:58}~/testDir ➭ </pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>pwd</td>
+                            <td></td>
+                            <td></td>
+                            <td>Displays current working directory</td>
+                            <td>
+                                <code>
+                                    <pre>{18:58}~/testDir ➭ pwd
+/home/cj/testDir</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>touch</td>
+                            <td></td>
+                            <td>File name</td>
+                            <td>Creates a new file in current directory.</td>
+                            <td>
+                                <code>
+                                    <pre>{19:03}~/testDir ➭ touch myfile.txt
+{19:15}~/testDir ➭ ls
+myfile.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>cat</td>
+                            <td></td>
+                            <td>File name</td>
+                            <td>Concatinates the contents of given files and displays.</td>
+                            <td>
+                                <code>
+                                    <pre> inode Permissions Size User Date Modified Name
+693952 .rw-r--r--    29 1000 22 Jul 19:23   myfile1.txt
+720332 .rw-r--r--    29 1000 22 Jul 19:24   myfile2.txt
+{19:24}~/testDir ➭ cat myfile1.txt myfile2.txt 
+This is the content of file1
+This is the content of file2</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>sort</td>
+                            <td></td>
+                            <td>File name</td>
+                            <td>Sort the content of the file.</td>
+                            <td>
+                                <code>
+                                    <pre>{19:29}~/testDir ➭ cat file.txt
+Red
+Green
+Yellow
+blue
+Gold
+apple
+Android
+rain
+yesterday
+{19:29}~/testDir ➭ sort file.txt 
+Android
+apple
+blue
+Gold
+Green
+rain
+Red
+Yellow
+yesterday</pre>
+                                </code>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section class="prenext">
+            <a href="./dirs.html">Previous</a>
+            <a href="./">Next</a>
+        </section>
+        <aside>
+            <ul>
+                <li><a href="#">Linux Home</a></li>
+                <li><a href="pages/dirs.html">Linux Directory Structure</a></li>
+            </ul>
+        </aside>
+        <footer>
+            <h3>I have learnt Linux from
+                <em>Mr. Colt steele</em>
+                through his awesome course on Udemy - The linux command line bootcamp: Beginner to power user.</h3>
+            <p>As the course's title emphasises, the course helps the learner to understand the basics and apply the knowledge using GNU/Linux as their everyday operating system. In this Tutorials, I'm only including the basic concepts and the course has much more than the content presented in this Tutorials.</p>
+            <p>This Tutorials is just a personal practice but still have the content necessary for readers to get started with GNU/Linux.</p>
+        </footer>
+    </body>
+</html>
