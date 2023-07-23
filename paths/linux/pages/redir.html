@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linux I/O redirection</title>
+        <link rel="stylesheet" href="../styles/basic.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>CJ Knows Linux</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Tutorials</li>
+                    <li>Certifications</li>
+                    <li>About Us</li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <article class="redirection">
+                <h3>I/O redirection:</h3>
+                <table>
+                    <caption>I/O types</caption>
+                    <thead>
+                        <tr>
+                            <th>I/O Name</th>
+                            <th>Abbreviation</th>
+                            <th>File descriptor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Standard Input</td>
+                            <td>stdin</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Standar Output</td>
+                            <td>stdout</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Error</td>
+                            <td>stderr</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                <ul>
+                                    <li>
+                                        &gt; Redirects standard output to a file.
+                                    </li>
+                                    <li>&gt;&gt; Appends the stdout to a file</li>
+                                    <li>&lt;  Redirects stdin from a file to a command</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <h4>Combo:</h4>
+                <code>sort &lt; file.txt &gt; sorted.txt</code>
+                <h4>Redirecting stderr:</h4>
+                <code>
+                    <pre>cat nonexistingfile.txt 2> error.txt
+                </pre>
+                </code>
+                <h4>Redirecting both stderr and stdout:</h4>
+                <code>
+                    <pre>Into different files
+cat bee.txt ant.txt > insects.txt 2> error.txt
+(Order matters here.)
+Into same file:
+cat bee.txt ant.txt > insects.txt 2>&1
+Getting fancy:
+cat bee.txt ant.txt &> insects.txt
+                </pre>
+                </code>
+            </article>
+            <article class="grep">
+                <h3>The grep command:</h3>
+                <p>The grep command searches for patterns in each file's contents. Grep command prints each line that matches the pattern provided.</p>
+                <table>
+                    <caption>grep options</caption>
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Usage</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>-i</td>
+                            <td>Use the -i option with grep to make the search case insensitive.</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ grep -i line somefile.txt 
+Line with
+line q
+LIne 1
+LINe 2
+LINE 3</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-w</td>
+                            <td>Use the -w option to ensure that grep only matches words, rather than fragments located inside of other words. A word is defined by nonword characters on either side (start of line, spaces, end of line, punctuation, etc.)
+                            </td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ grep -c line somefile.txt 
+1
+~/testDir❯ grep -ic line somefile.txt 
+5</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-r</td>
+                            <td>Use the -r option to perform a recursive search which will include all files under a directory, subdirectories and their files, and so on.
+                            </td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ grep -r line             
+somefile.txt:line q
+~/testDir❯ grep -ri line
+somefile.txt:Line with
+somefile.txt:line q
+somefile.txt:LIne 1
+somefile.txt:LINe 2
+somefile.txt:LINE 3</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-c</td>
+                            <td>The -c option tells grep to print the number of matches instead of printing the actual matches</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ grep -c line somefile.txt 
+1
+~/testDir❯ grep -ic line somefile.txt 
+5</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-o</td>
+                            <td>Tells grep to only print out the matches, insteas of the entire line containing each match.</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ grep -o line somefile.txt 
+line
+~/testDir❯ grep -oi line somefile.txt
+Line
+line
+LIne
+LINe
+LINE
+~/testDir❯ grep -oir line            
+somefile.txt:Line
+somefile.txt:line
+somefile.txt:LIne
+somefile.txt:LINe
+somefile.txt:LINE</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-n</td>
+                            <td>Precede output with line numbers.</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ grep -in line somefile.txt 
+1:Line with
+2:line q
+3:LIne 1
+4:LINe 2
+5:LINE 3</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-v</td>
+                            <td>Print lines that donot match</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ grep -v line somefile.txt 
+Line with
+LIne 1
+LINe 2
+LINE 3
+nothinbg
+This is not it
+~/testDir❯ grep -vi line somefile.txt
+nothinbg
+This is not it</pre>
+                                </code>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article class="regex">
+                <h3>Regex</h3>
+                <p>We can provide regular expressions to grep. Regular expressions helps us match complex patterns, But the syntax does differ from what we've seen so far.</p>
+                <ul>
+                    <li>. - matches any single character</li>
+                    <li>^ - matches the start of a line</li>
+                    <li>$ - matches the end of a line</li>
+                    <li>[abc] - matches any character in the set</li>
+                    <li>[^abc] - matches any char NOT in set</li>
+                    <li>[A-Z] - matches characters in a range</li>
+                    <li>* - repeat previous expression 0 or more times</li>
+                    <li>\ - escape meta-characters</li>
+                </ul>
+            </article>
+            <article class="piping">
+                <h3>Piping:</h3>
+                <p>Pipes are used to redirect a stream from one program to another program. We can take the output of one command and redirect it to the input of another.</p>
+                <p>We use the pipe character ( | ) to separate two commands. The output of the first command will be passed to the standard input of the second command.</p>
+                <code>cat file.txt | head -7 | tail -5</code>
+                <table>
+                    <caption>Useful commands</caption>
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Options</th>
+                            <th>Arguments</th>
+                            <th>Usage</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>strings</td>
+                            <td></td>
+                            <td></td>
+                            <td>Display printable string.</td>
+                            <td>
+                                <code>
+                                    <pre>~/vkcf/images❯ strings dress1.jpeg | grep -n ttyy
+32:ttyy</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>cut</td>
+                            <td>-d -f</td>
+                            <td>delimiter (Use delimiter as the field seperator.) N (Displays the Nth field.)
+                            </td>
+                            <td>Cut out selected portions of file. If file is omitted, use stdin.</td>
+                            <td>
+                                <code>
+                                    <pre>~/vkcf/images❯ strings dress1.jpeg | grep -ni qy 
+564:ZQY>
+1026:._QY
+~/vkcf/images❯ strings dress1.jpeg | grep -ni qy | tail -1
+1026:._QY
+~/vkcf/images❯ strings dress1.jpeg | grep -ni qy | tail -1 | cut -d'_' -f1
+1026:.
+~/vkcf/images❯ strings dress1.jpeg | grep -ni qy | tail -1 | cut -d'_' -f2
+QY</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>tr</td>
+                            <td>-d (delete)</td>
+                            <td>"char1" "char2"</td>
+                            <td>Replaces a charector in a string with another charector.</td>
+                            <td>
+                                <code>
+                                    <pre>~/vkcf/images❯ cat tmp | grep dress | cut -d'6' -f2 | head -5 | tail -4
+   dress2.jpeg
+   dress3.jpeg
+   dress4.jpeg
+   dress5.jpeg
+~/vkcf/images❯ cat tmp | grep dress | cut -d'6' -f2 | head -5 | tail -4 | tr "." " "
+   dress2 jpeg
+   dress3 jpeg
+   dress4 jpeg
+   dress5 jpeg
+~❯ echo "hello world...." | tr "[:lower:]" "[:upper:]" | tr -d "[:punct:]"
+HELLO WORLD</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>column</td>
+                            <td>-t</td>
+                            <td>file content that has columns</td>
+                            <td>Changes the columns into a table.</td>
+                            <td>
+                                <code>
+                                    <pre>~/vkcf/images❯ cat tmp | grep dress | cut -d'6' -f2 | head -5 | tail -4 | tr "." " " | column -t
+  dress2  jpeg
+  dress3  jpeg
+  dress4  jpeg
+  dress5  jpeg</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>tee</td>
+                            <td></td>
+                            <td>command1 | tee file.txt | command2</td>
+                            <td>The tee program reads standard input and copies it both to standard output AND to a file. This allows us to capture information part of the way through a pipeline, without interrupting the flow.
+                            </td>
+                            <td>
+                                <code>
+                                    <pre>~❯ lsa | grep ash
+ 656362 .rw-------  5.4Ki 1000 23 Jul 05:01   .bash_history
+ 656565 .rw-r--r--     21 1000  2 Feb 12:08   .bash_logout
+ 656571 .rw-r--r--     57 1000  2 Feb 12:08   .bash_profile
+ 661643 .rw-r--r--   14Ki 1000 11 Apr 03:35   .bashrc
+~❯ lsa | grep ash | tee file.txt | wc -l
+4
+~❯ cat file.txt
+ 656362 .rw-------  5.4Ki 1000 23 Jul 05:01   .bash_history
+ 656565 .rw-r--r--     21 1000  2 Feb 12:08   .bash_logout
+ 656571 .rw-r--r--     57 1000  2 Feb 12:08   .bash_profile
+ 661643 .rw-r--r--   14Ki 1000 11 Apr 03:35   .bashrc</pre>
+                                </code>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section class="prenext">
+            <a href="./inter.html">Previous</a>
+            <a href="./cjobc.html">Next</a>
+        </section>
+        <aside>
+            <ul>
+                <li><a href="../linux_index.html">Linux Home</a></li>
+                <li><a href="./dirs.html">Linux Directory Structure</a></li>
+                <li><a href="./cmds.html">Linux Commands</a></li>
+                <li><a href="./files.html">Working with files</a></li>
+                <li><a href="./files.html">Finding in Linux</a></li>
+                <li><a href="./inter.html">Linux Intermediate concepts</a></li>
+                <li><a href="#">Redirection</a></li>
+                <li><a href="./cjobc.html">Customisation and Job control</a></li>
+            </ul>
+        </aside>
+        <footer>
+            <h3>I have learnt Linux from
+                <em>Mr. Colt steele</em>
+                through his awesome course on Udemy - The linux command line bootcamp: Beginner to power user.</h3>
+            <p>As the course's title emphasises, the course helps the learner to understand the basics and apply the knowledge using GNU/Linux as their everyday operating system. In this Tutorials, I'm only including the basic concepts and the course has much more than the content presented in this Tutorials.</p>
+            <p>This Tutorials is just a personal practice but still have the content necessary for readers to get started with GNU/Linux.</p>
+        </footer>
+    </body>
+</html>

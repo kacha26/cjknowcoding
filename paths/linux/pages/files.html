@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Working with files in linux</title>
+        <link rel="stylesheet" href="../styles/basic.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>CJ Knows Linux</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Tutorials</li>
+                    <li>Certifications</li>
+                    <li>About Us</li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <article class="files">
+                <h3>Useful commands to work with files:</h3>
+                <table>
+                    <caption>Commands for handling files</caption>
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Options</th>
+                            <th>Arguments</th>
+                            <th>Usage</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>less</td>
+                            <td></td>
+                            <td>File name</td>
+                            <td>Tde less command displays tde contents of a file, one page at a time.</td>
+                            <td>
+                                <code>
+                                    <pre>cj:testDir/ $ less file.txt </pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>tac</td>
+                            <td></td>
+                            <td>File name</td>
+                            <td>tac (cat spelled backwards) will concatenate and print files in reverse.</td>
+                            <td>
+                                <code>
+                                    <pre>cj:testDir/ $ cat file.txt [4:41:54]
+Red
+Green
+Yellow
+blue
+Gold
+apple
+Android
+rain
+yesterday
+cj:testDir/ $ tac file.txt [4:46:13]
+yesterday
+rain
+Android
+apple
+Gold
+blue
+Yellow
+Green
+Red</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>rev</td>
+                            <td></td>
+                            <td>File name</td>
+                            <td>cj:testDir/ $ cat file.txt                                                                                                                                          [4:41:54]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Red
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Green
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Yellow
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                blue
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Gold
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                apple
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Android
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                rain
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                yesterday
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                cj:testDir/ $ tac file.txt                                                                                                                                          [4:46:13]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                yesterday
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                rain
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Android
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                apple
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Gold
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                blue
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Yellow
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Green
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Red</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ rev file.txt 
+deR
+neerG
+wolleY
+eulb
+dloG
+elppa
+diordnA
+niar
+yadretsey</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>head</td>
+                            <td></td>
+                            <td>Filename</td>
+                            <td>The head command prints a portion of a file, starting
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                from the beginning of the file. By default, it prints the
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                first 10 lines of a file.</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ head file.txt 
+Red
+Green
+Yellow
+blue
+Gold
+apple
+Android
+rain
+yesterday</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>-n --lines</td>
+                            <td>integer (number of lines) Filename</td>
+                            <td>Prints first n lines of file Filename</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ head -n 3 file.txt 
+Red
+Green
+Yellow
+~/testDir❯ head -2 file.txt 
+Red
+Green</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>-c</td>
+                            <td>Number of bytes, File name</td>
+                            <td>Prints bytes instead of lines</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ head -c 6 file.txt
+Red
+Gr%</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>tail</td>
+                            <td>-n --lines -c</td>
+                            <td>Number File name</td>
+                            <td>The tail command works similarly to the head
+                                                                                                                                                                                                                                                                                                                                                                                                command, except it prints from the END of a file. By
+                                                                                                                                                                                                                                                                                                                                                                                                default, it prints the last 10 lines of a file.</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ tail file.txt 
+Red
+Green
+Yellow
+blue
+Gold
+apple
+Android
+rain
+yesterday
+~/testDir❯ tail -3 file.txt 
+Android
+rain
+yesterday
+~/testDir❯ tail -c 12 file.txt 
+n
+yesterday</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>wc</td>
+                            <td>-l -w</td>
+                            <td>File name</td>
+                            <td>The word count command can tell us the number of
+                                                                                                                                                                                                                                                                                                words, lines, or bytes in files. By default, it prints out
+                                                                                                                                                                                                                                                                                                three numbers: the lines, words, and bytes in a file</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ wc file.txt 
+ 9  9 56 file.txt
+~/testDir❯ wc -l file.txt 
+9 file.txt
+~/testDir❯ wc -w file.txt 
+9 file.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>sort</td>
+                            <td>-r -n -u -k</td>
+                            <td>File name</td>
+                            <td>The sort command outputs the sorted contents of a file
+                                                                                                                                                                                                                                (it does not change the file itself). By default, it will sort
+                                                                                                                                                                                                                                the lines of a file alphabetically.
+                            </td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ sort -r file.txt 
+yesterday
+Yellow
+Red
+rain
+Green
+Gold
+blue
+apple
+Android</pre>
+                                </code>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section class="prenext">
+            <a href="./cmds.html">Previous</a>
+            <a href="./finding.html">Next</a>
+        </section>
+        <aside>
+            <ul>
+                <li><a href="../linux_index.html">Linux Home</a></li>
+                <li><a href="./dirs.html">Linux Directory Structure</a></li>
+                <li><a href="./cmds.html">Linux Commands</a></li>
+                <li><a href="#">Working with files</a></li>
+                <li><a href="./finding.html">Finding in Linux</a></li>
+            </ul>
+        </aside>
+        <footer>
+            <h3>I have learnt Linux from
+                <em>Mr. Colt steele</em>
+                through his awesome course on Udemy - The linux command line bootcamp: Beginner to power user.</h3>
+            <p>As the course's title emphasises, the course helps the learner to understand the basics and apply the knowledge using GNU/Linux as their everyday operating system. In this Tutorials, I'm only including the basic concepts and the course has much more than the content presented in this Tutorials.</p>
+            <p>This Tutorials is just a personal practice but still have the content necessary for readers to get started with GNU/Linux.</p>
+        </footer>
+    </body>
+</html>

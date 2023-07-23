@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linux advanced concepts</title>
+        <link rel="stylesheet" href="../styles/basic.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>CJ Knows Linux</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Tutorials</li>
+                    <li>Certifications</li>
+                    <li>About Us</li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <article class="finding">
+                <h3>Finding files and folders:</h3>
+                <p>The
+                    <strong>locate</strong>
+                    command performs a search of pathnames
+                                                                                                                                                                                                                                                                    across our machine that match a given substring and
+                                                                                                                                                                                                                                                                    then prints out any matching names.
+                                                                                                                                                                                                                                                                    It is nice and speedy because it uses a pre-generated
+                                                                                                                                                                                                                                                                    database file rather than searching the entire machine.</p>
+                <code>
+                    <pre>~/testDir❯ locate -i file.txt
+/home/cj/file.txt
+/home/cj/.vscode-oss/extensions/mblode.pretty-formatter-0.2.1-universal/node_modules/prettydiff/tests/diffbase/aaatestdir/aaatestfile.txt
+/home/cj/.vscode-oss/extensions/mblode.pretty-formatter-0.2.1-universal/node_modules/prettydiff/tests/diffnew/zzztestdir/zzztestfile.txt
+/home/cj/testDir/file.txt
+/usr/share/cups/ipptool/testfile.txt
+/usr/share/openmpi/help-hostfile.txt
+/usr/share/openmpi/help-rmaps_rank_file.txt
+/usr/share/pmix/help-pmix-psensor-file.txt</pre>
+                    <strong>
+                        <em>locate command is not recommended as it searches an index that is not always updated</em>
+                    </strong>
+                </code>
+                <table>
+                    <caption>
+                        <code>find</code>
+                        command</caption>
+                    <thead>
+                        <tr>
+                            <th>Options</th>
+                            <th>Arguments</th>
+                            <th>Usage</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>File / Directory name</td>
+                            <td>Lists every single file and directory nested.</td>
+                            <td>
+                                <code>
+                                    <pre>~❯ find testDir
+testDir
+testDir/myfile1.txt
+testDir/file.txt
+testDir/myfile2.txt
+~❯ cd testDir
+~/testDir❯ find
+.
+./myfile1.txt
+./file.txt
+./myfile2.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-type</td>
+                            <td>f d</td>
+                            <td>Only print files, directories, symbolic links, etc</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ find -type d
+.
+./dir2
+./dir1
+~/testDir❯ find -type f
+./myfile1.txt
+./file.txt
+./myfile2.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-name -iname</td>
+                            <td>source directory and file / directory name</td>
+                            <td>To find a particular file or directory in a given source directory.</td>
+                            <td>
+                                <code>
+                                    <pre>~❯ find ~/testDir -name dir2 
+/home/cj/testDir/dir2
+~❯ find ~/testDir -name nfile.txt
+/home/cj/testDir/dir1/nfile.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-size</td>
+                            <td>standard size</td>
+                            <td>Find files of a specific size. Preceded by + or - to find files over or under specific size.</td>
+                            <td>
+                                <code>
+                                    <pre>find ~/testDir -size -1k
+/home/cj/testDir/dir1/nfile.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-user</td>
+                            <td>user name</td>
+                            <td>Finds files and directories that belong to a particular user.</td>
+                            <td>
+                                <code>
+                                    <pre>~❯ find ~/testDir -user cj     
+/home/cj/testDir
+/home/cj/testDir/dir2
+/home/cj/testDir/dir1
+/home/cj/testDir/dir1/nfile.txt
+/home/cj/testDir/myfile1.txt
+/home/cj/testDir/file.txt
+/home/cj/testDir/myfile2.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-mtime -mmin -ctime -cmin -atime -amin -anewer</td>
+                            <td>number</td>
+                            <td>Match files/folders that were last modified num *24 hours ago. + for above given minutes and - for below.</td>
+                            <td>
+                                <code>
+                                    <pre>~/testDir❯ find -mmin -60
+.
+./dir2
+./dir1
+./dir1/nfile.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-and -or -not</td>
+                            <td>multiple search patterns</td>
+                            <td>Complex queries</td>
+                            <td>
+                                <code>
+                                    <pre>~❯ find ~/testDir -name "m*" -or -name "n*"
+/home/cj/testDir/dir1/nfile.txt
+/home/cj/testDir/myfile1.txt
+/home/cj/testDir/myfile2.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>-exec</td>
+                            <td>
+                                command {} ;</td>
+                            <td>Performs specified command on each match found.</td>
+                            <td>
+                                <code>
+                                    <pre>~❯ find ~/testDir -type d -exec ls '{}' ';'    
+dir1  dir2  file.txt  myfile1.txt  myfile2.txt
+nfile.txt
+~❯ find ~/testDir -name "n*" -exec cp '{}' '{}'_copy1.txt ';'
+~❯ lst ~/testDir                                             
+ inode Permissions Size User Date Modified Name
+718384 drwxr-xr-x     - 1000 23 Jul 08:27   /home/cj/testDir
+792996 drwxr-xr-x     - 1000 23 Jul 09:47  ├──  dir1
+793007 .rw-r--r--     0 1000 23 Jul 08:29  │  ├──  nfile.txt
+793009 .rw-r--r--     0 1000 23 Jul 09:45  │  ├──  nfile.txt_copy.txt
+793035 .rw-r--r--     0 1000 23 Jul 09:47  │  ├──  nfile.txt_copy.txt_copy1.txt
+793034 .rw-r--r--     0 1000 23 Jul 09:47  │  └──  nfile.txt_copy1.txt
+793006 drwxr-xr-x     - 1000 23 Jul 08:27  ├──  dir2
+709749 .rw-r--r--    56 1000 22 Jul 19:29  ├──  file.txt
+693952 .rw-r--r--    29 1000 22 Jul 19:23  ├──  myfile1.txt
+720332 .rw-r--r--    29 1000 22 Jul 19:24  └──  myfile2.txt</pre>
+                                </code>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <ul>
+                                    <li>mtime, or modification time, is when a file was last modified AKA when its contents last changed.</li>
+                                    <li>ctime, or change time, is when a file was last changed. This occurs anytime mtime changes but also when we rename a file, move it, or alter permissions</li>
+                                    <li>atime, or access time, is updated when a file is read by an application or a command like cat.</li>
+                                </ul>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <strong>xargs</strong>
+                                Reads items from standard input, separated by blanks (spaces or newlines) and then executes a command using those items</td>
+                            <td>
+                                <code>
+                                    <pre>~❯ find ~/testDir -name "*.txt" | xargs cat
+This is the content of file1
+Red
+Green
+Yellow
+blue
+Gold
+apple
+Android
+rain
+yesterday
+This is the content of file2</pre>
+                                </code>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+        </section>
+
+        <section class="prenext">
+            <a href="./files.html">Previous</a>
+            <a href="./inter.html">Next</a>
+        </section>
+        <aside>
+            <ul>
+                <li><a href="../linux_index.html">Linux Home</a></li>
+                <li><a href="./dirs.html">Linux Directory Structure</a></li>
+                <li><a href="./cmds.html">Linux Commands</a></li>
+                <li><a href="./files.html">Working with files</a></li>
+                <li><a href="#">Finding in linux</a></li>
+                <li><a href="./inter.html">Linux Intermediate concepts</a></li>
+            </ul>
+        </aside>
+        <footer>
+            <h3>I have learnt Linux from
+                <em>Mr. Colt steele</em>
+                through his awesome course on Udemy - The linux command line bootcamp: Beginner to power user.</h3>
+            <p>As the course's title emphasises, the course helps the learner to understand the basics and apply the knowledge using GNU/Linux as their everyday operating system. In this Tutorials, I'm only including the basic concepts and the course has much more than the content presented in this Tutorials.</p>
+            <p>This Tutorials is just a personal practice but still have the content necessary for readers to get started with GNU/Linux.</p>
+        </footer>
+    </body>
+</html>

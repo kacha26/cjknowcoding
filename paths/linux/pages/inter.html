@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linux Intermediate concept</title>
+        <link rel="stylesheet" href="../styles/basic.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>CJ Knows Linux</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Tutorials</li>
+                    <li>Certifications</li>
+                    <li>About Us</li>
+                </ul>
+            </nav>
+        </header>
+        <section class="content">
+            <article class="bundle">
+                <h3>Bundle files and directories:</h3>
+                <h4>The tar command:</h4>
+                <code>tar [-] c | x | t f filename sourceDirectory</code>
+                <p>Create, extract and list the table of content of a tar archive. f denotes the file and also v for verbose, z for compression can also be used.</p>
+                <code class="Example">
+                    <pre>Example:
+~/testDir❯ lst
+ inode Permissions Size User Date Modified Name
+718384 drwxr-xr-x     - 1000 23 Jul 13:37   .
+693952 drwxr-xr-x     - 1000 23 Jul 13:28  ├──  fruits
+720332 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  apple
+720392 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  banana
+720437 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  cherry
+720439 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  dragon
+720443 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  grapes
+720444 .rw-r--r--     0 1000 23 Jul 13:28  │  └──  jackfruit
+718369 drwxr-xr-x     - 1000 23 Jul 13:37  ├──  salads
+709749 drwxr-xr-x     - 1000 23 Jul 13:30  └──  veggies
+720447 .rw-r--r--     0 1000 23 Jul 13:30     ├──  carrot
+720448 .rw-r--r--     0 1000 23 Jul 13:30     ├──  lemon
+720449 .rw-r--r--     0 1000 23 Jul 13:30     ├──  onion
+693930 .rw-r--r--     0 1000 23 Jul 13:30     ├──  potato
+720450 .rw-r--r--     0 1000 23 Jul 13:30     ├──  raddish
+720425 .rw-r--r--     0 1000 23 Jul 13:30     └──  tomato
+~/testDir❯ tar cf frt.tar fruits 
+~/testDir❯ tar cf veg.tar veggies 
+~/testDir❯ lsa
+ inode Permissions Size User Date Modified Name
+693952 drwxr-xr-x     - 1000 23 Jul 13:28   fruits
+718369 drwxr-xr-x     - 1000 23 Jul 13:37   salads
+709749 drwxr-xr-x     - 1000 23 Jul 13:30   veggies
+693610 .rw-r--r--  10Ki 1000 23 Jul 13:38   frt.tar
+720446 .rw-r--r--  10Ki 1000 23 Jul 13:38   veg.tar
+~/testDir❯ cd salads
+~/testDir/salads❯ tar tf /home/cj/testDir/frt.tar 
+fruits/
+fruits/grapes
+fruits/banana
+fruits/dragon
+fruits/jackfruit
+fruits/cherry
+fruits/apple
+~/testDir/salads❯ tar tf /home/cj/testDir/veg.tar
+veggies/
+veggies/raddish
+veggies/carrot
+veggies/tomato
+veggies/potato
+veggies/lemon
+veggies/onion
+~/testDir/salads❯ tar xf /home/cj/testDir/frt.tar 
+~/testDir/salads❯ tar xf /home/cj/testDir/veg.tar
+~/testDir/salads❯ lst
+ inode Permissions Size User Date Modified Name
+718369 drwxr-xr-x     - 1000 23 Jul 13:40   .
+792996 drwxr-xr-x     - 1000 23 Jul 13:28  ├──  fruits
+793009 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  apple
+793001 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  banana
+793007 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  cherry
+793002 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  dragon
+793000 .rw-r--r--     0 1000 23 Jul 13:28  │  ├──  grapes
+793006 .rw-r--r--     0 1000 23 Jul 13:28  │  └──  jackfruit
+793034 drwxr-xr-x     - 1000 23 Jul 13:30  └──  veggies
+793061 .rw-r--r--     0 1000 23 Jul 13:30     ├──  carrot
+793064 .rw-r--r--     0 1000 23 Jul 13:30     ├──  lemon
+793065 .rw-r--r--     0 1000 23 Jul 13:30     ├──  onion
+793063 .rw-r--r--     0 1000 23 Jul 13:30     ├──  potato
+793035 .rw-r--r--     0 1000 23 Jul 13:30     ├──  raddish
+793062 .rw-r--r--     0 1000 23 Jul 13:30     └──  tomato
+                </pre>
+                </code>
+            </article>
+            <article class="compression">
+                <h3>File compression:</h3>
+                <table>
+                    <caption>Commands for file size and compression</caption>
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Options</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>du</td>
+                            <td></td>
+                            <td>Estimates file usage</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>-k</td>
+                            <td>Displays size in kile bytes</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>-h</td>
+                            <td>Displays sized in human readable form.</td>
+                        </tr>
+                        <tr>
+                            <td>gzip</td>
+                            <td></td>
+                            <td>Compress files</td>
+                        </tr>
+                        <tr>
+                            <td>gunzip</td>
+                            <td></td>
+                            <td>Uncompress files</td>
+                        </tr>
+                        <tr>
+                            <td>zcat gzcat</td>
+                            <td></td>
+                            <td>Both commands concatenate or diplay content. (similar to cat command)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <code class="Example">
+                    <pre>~/testDir/salads/fruits❯ du apple 
+4	apple
+~/testDir/salads/fruits❯ du -k apple 
+4	apple
+~/testDir/salads/fruits❯ du -h apple 
+4.0K	apple
+~/testDir/salads/fruits❯ gzip apple 
+~/testDir/salads/fruits❯ du -h apple.gz 
+4.0K	apple.gz
+~/testDir/salads/fruits❯ gunzip apple
+                </pre>
+                </code>
+            </article>
+            <article class="wild-cards">
+                <h3>Expansion and substitution:</h3>
+                <h4>Wildcard charectors / Globbing patterns:</h4>
+                <p>We can use special wildcard characters to build patterns that can match multiple filenames at once.  The asterisk ( * ) character represents zero or more characters in a filename. The question mark ( ? ) character represents any single character.</p>
+                <p>
+                    <em>Note: To match a wildcard charector, use an escape charector \.</em>
+                </p>
+                <h4>Range Wildcards:</h4>
+                <p>Inside of square brackets ([ ]) we can specify a range of characters to match.</p>
+                <code>
+                    <pre>~/testDir❯ ls *[A-D].rod
+beanA.rod  beanB.rod  beanC.rod  beanD.rod
+~/testDir❯ ls *[A-D].rod *[5-7].png pic[148].*
+beanA.rod  beanB.rod  beanC.rod  beanD.rod  pic1.png  pic4.png  pic5.png  pic6.png  pic7.png  pic8.png</pre>
+                </code>
+                <h4>Negative ranges:</h4>
+                <p>Inside of square brackets ([ ]) we can specify a range of characters to NOT match, using a caret ( ^ )</p>
+                <code>
+                    <pre>~/testDir❯ ls *[^A-D].rod                         
+beanE.rod  beanF.rod  beanG.rod
+~/testDir❯ ls pic[^1348].*                        
+pic2.png  pic5.png  pic6.png  pic7.png  pic9.png
+~/testDir❯ ls *[^3-7].png                         
+pic1.png  pic2.png  pic8.png  pic9.png</pre>
+                </code>
+                <h4>Charector classes:</h4>
+                <ul>
+                    <li>[:alpha:] - alphabetic characters, upper and lower</li>
+                    <li>[:digit:] - digits -1-9</li>
+                    <li>[:lower:] - lower case letters</li>
+                    <li>[:upper:] - upper case letters</li>
+                    <li>[:blank:] - blank characters: space and tab</li>
+                    <li>[:punct:] - punctuation characters</li>
+                    <li>[:alnum:] - alphanumeric characters (alpha + digit)</li>
+                </ul>
+                <h4>Brace expansion:</h4>
+                <p>Brace expansion is used to generate arbitrary strings.  Basically, it will generate multiple strings for us based on a pattern. We provide a set of strings inside of curly braces ({ }), as well as optional surrounding prefixes and suffixes.  The specified strings are used to generate all possible combinations with the optional prefixes and suffixes</p>
+                <code>
+                    <pre>~/testDir❯ mkdir week{1..5}
+~/testDir❯ echo {1..50..5}
+1 6 11 16 21 26 31 36 41 46
+~/testDir❯ touch Group{A..F}
+~/testDir❯ lsa
+ inode Permissions Size User Date Modified Name
+693011 drwxr-xr-x     - 1000 23 Jul 15:23   week1
+693952 drwxr-xr-x     - 1000 23 Jul 15:23   week2
+718369 drwxr-xr-x     - 1000 23 Jul 15:23   week3
+720332 drwxr-xr-x     - 1000 23 Jul 15:23   week4
+720392 drwxr-xr-x     - 1000 23 Jul 15:23   week5
+720425 .rw-r--r--     0 1000 23 Jul 15:25   GroupA
+720437 .rw-r--r--     0 1000 23 Jul 15:25   GroupB
+720439 .rw-r--r--     0 1000 23 Jul 15:25   GroupC
+720443 .rw-r--r--     0 1000 23 Jul 15:25   GroupD
+720444 .rw-r--r--     0 1000 23 Jul 15:25   GroupE
+720445 .rw-r--r--     0 1000 23 Jul 15:25   GroupF
+~/testDir❯ echo {a,b}{1,2,3}
+a1 a2 a3 b1 b2 b3
+~/testDir❯ echo {x,y{1,3,5},z}{a,b,c}
+xa xb xc y1a y1b y1c y3a y3b y3c y5a y5b y5c za zb zc
+</pre>
+                </code>
+                <h4>Arithmetic expansion:</h4>
+                <p>The shell will perform arithmetic via expansion using the $((expression)) syntax. inside the parentheses, we can write artithmetic expressions using:
+                    <ul>
+                        <li>+ addition</li>
+                        <li>- subtraction</li>
+                        <li>* multiplication</li>
+                        <li>/ division</li>
+                        <li>** exponentiation</li>
+                        <li>% modulo (remainder operator)</li>
+                    </ul>
+                </p>
+                <code>
+                    <pre>~/testDir❯ echo $((3+45))
+48
+~/testDir❯ echo $((3*5)) 
+15
+~/testDir❯ echo $((3**5))
+243</pre>
+                    <p>
+                        <em>Note: The shell only performs integer arithmetic, so the result is always a whole number.</em>
+                    </p>
+                </code>
+                <h4>Command substitution:</h4>
+                <p>We can use the $(command) syntax to display the output of another command.</p>
+                <code>
+                    <pre>~/testDir❯ echo "Today is $(date)"            
+Today is Sunday 23 July 2023 03:56:40 PM IST</pre>
+                </code>
+                <h4>Quoting:</h4>
+                <ul>
+                    <li>If we wrap text in double quotes, the shell will respect our spacing and will ignore special characters except for dollar sign ( $ ) , backslash ( \ ), and backtick ( ` ) Double Quotes. Pathname expansion, brace expansion, and word splitting will be ignored. However, command substitution and arithmetic expansion is still performed because dollar signs still have meaning inside double quotes.</li>
+                    <li>Use single quotes to supress all forms of substitution.</li>
+                    <li>To selectively prevent expansion or substitution for specific charectors, we can prefix them with a single backlash \. We can use this to reference special charectors that normally have meaning inside of filenames.</li>
+                </ul>
+                <code>
+                    <pre>~/testDir❯ echo This is too                                    far
+This is too far
+~/testDir❯ echo "This is too                    far"
+This is too                    far
+~/testDir❯ echo "$hit creature"
+ creature
+~/testDir❯ echo '$hit creature'
+$hit creature
+~/testDir❯ echo $500.45
+.45
+~/testDir❯ echo \$500.45
+$500.45</pre>
+                </code>
+            </article>
+        </section>
+        <section class="prenext">
+            <a href="./finding.html">Previous</a>
+            <a href="./redir.html">Next</a>
+        </section>
+        <aside>
+            <ul>
+                <li><a href="../linux_index.html">Linux Home</a></li>
+                <li><a href="./dirs.html">Linux Directory Structure</a></li>
+                <li><a href="./cmds.html">Linux Commands</a></li>
+                <li><a href="./files.html">Working with files</a></li>
+                <li><a href="./finding.html">Finding in Linux</a></li>
+                <li><a href="#">Linux Intermediate concepts</a></li>
+                <li><a href="./redir.html">Redirection</a></li>
+            </ul>
+        </aside>
+        <footer>
+            <h3>I have learnt Linux from
+                <em>Mr. Colt steele</em>
+                through his awesome course on Udemy - The linux command line bootcamp: Beginner to power user.</h3>
+            <p>As the course's title emphasises, the course helps the learner to understand the basics and apply the knowledge using GNU/Linux as their everyday operating system. In this Tutorials, I'm only including the basic concepts and the course has much more than the content presented in this Tutorials.</p>
+            <p>This Tutorials is just a personal practice but still have the content necessary for readers to get started with GNU/Linux.</p>
+        </footer>
+    </body>
+</html>
