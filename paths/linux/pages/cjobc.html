@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Everyday Linux</title>
-        <link rel="stylesheet" href="basic.css">
+        <title>Linux Jobs</title>
+        <link rel="stylesheet" href="../styles/basic.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
@@ -21,73 +21,132 @@
                 </ul>
             </nav>
         </header>
-        <section class="welcome">
-            <article class="welcome">
-                <h2>Welcome everyone to your
-                    <em>the</em>
-                    guide to use GNU/Linux as your everyday operating system...</h2>
+        <section class="content">
+            <article class="prompt">
+                <h3>Customising the prompt:</h3>
+                <p>Prompt can be customised using the environment variables. For bash, it is $PS1.</p>
+                <code>
+                    <pre>
+    export PS1=[u\@h\w\]\$
+    Add the above line to .bashrc file.
+    For multiple lines add few outside the []. like
+    PS1="\t\n[\h\w]\$"
+    Use man bash and search for PS1 for more details.
+</pre>
+                </code>
             </article>
-        </section>
-        <section class="intro">
-            <article class="intro">
-                <h3>What is linux?</h3>
-                <p>To understand what is linux, one should be familiar with the following points:</p>
+            <article class="envvar">
+                <h3>The Environment:</h3>
+                <p>The shell maintains a set of information during a shell session, known as the environment. It's just a series of key-value pairs that define properties like:</p>
                 <ul>
                     <li>
-                        <strong>Operating System<em>
-                                The OS</em>
-                        </strong>: An operating system is a collection of software that can manage hardware resources and provide an environment for applications to run.</li>
+                        Your home directory</li>
                     <li>
-                        <strong>The linux kernel</strong>: A kernel is an intermediary between the hardware and the software.</li>
+                        Your working directory</li>
                     <li>
-                        <strong>Distro</strong>: A linux kernel combined with other software becomes the full on operation system which is called a linux distribution or simply
-                        <em>
-                            Distro.</em>
-                    </li>
+                        The name of your shell</li>
                     <li>
-                        <strong>GNU/Linux</strong>: The additional software that is required for the linux kernel to be a full fledged operating system is provided by the GNU project. Hence, GNU/Linux is the original operating system. And the distrubutions are the implementations or the different flavours of GNU/Linux each one with their own goals and focus of interests.</li>
+                        The name of the logged in user</li>
                 </ul>
-                <p>There are hundreds of linux distros which are curated softwares of GNU/Linux. You can use any distro to practice the concepts in this Tutorials. My personal favourite is
-                    <a href="https://arcolinux.com/">Arco Linux</a>
-                </p>
+                <h4>Key points:</h4>
+                <ul>
+                    <li>printenv - Command prints all the environmental variables.</li>
+                    <li>Environment variables can be set and updated as VAR="value"</li>
+                    <li>Environmental variable can be deleted by unset command
+                        <code>unset VAR</code>
+                    </li>
+                    <li>Environmental variable can be retained through sessions by adding value to .bashrc file.
+                        <code>export VAR="value"</code>
+                    </li>
+                </ul>
             </article>
-            <article class="kernel">
-                <h3>Kernel, Shell, Bash, terminal and prompt:</h3>
+            <article class="processes">
+                <h3>Processes:</h3>
+                <h4>Key points:</h4>
                 <ul>
                     <li>
-                        <strong>Kernel:</strong>
-                        Kernel is a computer program that forms the core of an opereating system that performs tasks like managing hardware and memory, scheduling tasks etc.</li>
+                        <code>
+                            <pre>command &</pre>
+                        </code>
+                        - Starts the command in background</li>
                     <li>
-                        <strong>Shell:</strong>
-                        Shell is the default interface to the linux system. Shell exposes the OS's services to human users or other programs / applications. Shell takes the human commands and give them to OS to perform. It is the outer layer of the Kernel / OS, hence the name
-                        <em>"Shell"</em>
+                        <code>
+                            <pre>Ctrl-c</pre>
+                        </code>
+                        - Kills the foreground process.
                     </li>
                     <li>
-                        <strong>Bash:</strong>
-                        Bash is the most popular shell program. Bash runs pretty much on any linux distro.</li>
+                        <code>
+                            <pre>Ctrl-z</pre>
+                        </code>
+                        - Suspends the foreground process.</li>
                     <li>
-                        <strong>Terminal:</strong>
-                        Terminal is a program that runs shell. Humans interact with shell. Shell the runs shell. Shell inturn gives commands to OS. And the OS performs the task requested by the human.</li>
+                        <code>
+                            <pre>bg [%num]</pre>
+                        </code>- Background a suspended
+                    </li>
                     <li>
-                        <strong>Prompt:</strong>
-                        Prompt is the basic information that is provided to the user, when shell is opened. It prompts the user to enter an input.</li>
+                        <code>
+                            <pre>fg [%num]</pre>
+                        </code>
+                        - Foreground a background process.</li>
+                    <li>
+                        <code>
+                            <pre>job [%num]</pre>
+                        </code>
+                        - List jobs.</li>
+                    <li>
+                        <code>
+                            <pre>kill</pre>
+                        </code>
+                        - Kill a process by job number or PID.</li>
+                    <li>
+                        <code>
+                            <pre>kill -l</pre>
+                        </code>
+                        - Display a list of signals.</li>
                 </ul>
             </article>
-            <article class="users">
-                <h3>Normal users and Super users:</h3>
-                <p>A Super user has full control over the OS and can perform any action.</p>
-                <code>Represented by
-                    <strong>
-                        <em>#</em>
-                    </strong>
-                    on prompt.</code>
-                <p>A Normal user can perform a subset of actions that a Super user can perform.</p>
-                <code>Represented by
-                    <strong>
-                        <em>$</em>
-                    </strong>
-                    on prompt.</code>
+            <article class="cron">
+                <h3>Cron</h3>
+                <ul>
+                    <li>cron - A time based job scheduling service.</li>
+                    <li>crontab - A program to create, read, update, and delete your job schedules.</li>
+                    <li>cron is used to schedule and automate tasks.</li>
+                </ul>
+                <ul>
+                    <li>
+                        <code>crontab file</code>
+                        Install a new crontab from file.</li>
+                    <li>
+                        <code>
+                            crontab -l</code>
+                        List your cron jobs.</li>
+                    <li>
+                        <code>crontab -e</code>
+                        Edit your cron jobs.</li>
+                    <li>
+                        <code>crontab -r</code>
+                        Remove all of your cron jobs.</li>
+                </ul>
+                <code>
+                    <pre>Examples:
+# Run every 30 minutes.
+0,30 * * * * /opt/acme/bin/half-hour-check
+
+# Another way to do the same thing.
+*/2 * * * * /opt/acme/bin/half-hour-check
+
+# Run for the first 5 minutes of the hour
+0-4 * * * * /opt/acme/bin/first-five-mins
+
+# Run at 02:00 every day and
+# send output to a log file.
+0 2 * * * /root/backupdb > /tmp/db.log 2>&1
+                </pre>
+                </code>
             </article>
+
         </section>
         <section class="prenext">
             <a href="#">Home</a>
