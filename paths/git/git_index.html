@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Git and Git Hub</title>
+    </head>
+    <body>
+        <header>
+            <h1>CJ Knows Git and Git Hub</h1>
+            <nav>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Tutorials</a>
+                </li>
+                <li>
+                    <a href="#">Certifications</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+            </nav>
+        </header>
+        <section class="Welcome">
+            <h2>Welcome everyone to a fast track tutorial of using Git and Git Hub that gives you just enough to get started and keep going with Git and Git hub....</h2>
+        </section>
+        <section class="intro">
+            <h3>Getting started with git:</h3>
+            <p>Install Git. Then run the following commands in CLI to set configurations.</p>
+            <ul>
+                <li>Setting up local system</li>
+                <code>
+                    <pre>
+            git config --global user.email "your@email.id"
+            git config --global user.name "your name"
+              </pre>
+                </code>
+                <li>Set your prefered editor</li>
+                <code>
+                    <pre>
+            git config --global core.editor vim
+            </pre>
+                </code>
+                <li>Verify the changes made</li>
+                <code>
+                    <pre>
+            git config --global --list
+                </pre>
+                </code>
+            </ul>
+
+            <article class="github">
+                <h3 id="start-github">Getting started with github:</h3>
+                <p>Repositories or the repos can be created in local system CLI and also in github.The simplest method is to create repo in github and then clone it into local system. This can be done as follows</p>
+                <ul>
+                    <li>Create an access token in developer settings &lt; classic tokens</li>
+                    <li>Create a new repo</li>
+                    <li>Copy the web URL of the newly created repo</li>
+                    <li>In the local system CLI, use the command</li>
+                    <code>
+                        <pre>
+            git clone https://accesstoken@remainingPartOfWebURL
+                  </pre>
+                    </code>
+                    <li>Once cloning is done, to update changes use</li>
+                    <code>
+                        <pre>
+            git pull
+                </pre>
+                    </code>
+                    <li>After making changes to repo, use</li>
+                    <code>
+                        <pre>
+            git status
+            git add .
+            git status
+            git commit -m "any commit message you wish"
+            git push -u origin main
+                </pre>
+                    </code>
+                </ul>
+            </article>
+            <article class="flow">
+                <h3>The Flow:</h3>
+                <h4>Initiating the project:</h4>
+                <p>To work with git and github, you need some files for which the version control can be applied. Lets consider different possibilities of initiating the project.</p>
+                <ol>
+                    <li>Starting from scratch:</li>
+                    <code>
+                        <pre>
+            git init project-name
+              </pre>
+                    </code>
+                    <li>Existing project:</li>
+                    <code>
+                        <pre>
+            #Get in to the main directory of the project. Use command
+            git init</pre>
+                    </code>
+                    <li>Forking and cloning: Once the cloning is done, the flow is same as mentioned for
+                        <a href="#start-github">"Getting started with github".</a>
+                    </li>
+                </ol>
+                <h4>Tracking files:</h4>
+                <ul>
+                    <li>Files in and not in staging area can be checked by</li>
+                    <code>
+                        <pre>
+            git status
+                  </pre>
+                    </code>
+
+                    <li>To add files into staging area</li>
+                    <code>
+                        <pre>
+            git add filename
+            
+            #To add all the changed files
+            git add .
+                  </pre>
+                    </code>
+
+                    <li>To list the files that git is tracking</li>
+                    <code>
+                        <pre>
+            git ls-files
+                  </pre>
+                    </code>
+                    <li>Files, once in the staging area can be commited using</li>
+                    <code>
+                        <pre>
+            git commit -m "Any apt message"
+                  </pre>
+                    </code>
+
+                    <li>To commit the files already being tracked, with out adding to staged area</li>
+                    <code>
+                        <pre>
+            git commit -am "any apt message"
+            <em>Note: This doesnt include newly created files, not staged atleast once.</em>
+                  </pre>
+                    </code>
+                </ul>
+                <h4>Backing out files:</h4>
+                <ul>
+
+                    <li>You have made the changes, moved to staging area and then want to unstage.</li>
+                    <code>
+                        <pre>
+            git reset HEAD filename
+                  </pre>
+                    </code>
+
+                    <li>To completely discard changes in a unstaged file.</li>
+                    <code>
+                        <pre>
+            git checkout -- filename
+                  </pre>
+                    </code>
+                </ul>
+            </article>
+        </section>
+
+    </body>
+</html>
