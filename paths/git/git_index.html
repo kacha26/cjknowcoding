@@ -160,6 +160,14 @@
                   </pre>
                     </code>
                 </ul>
+                <h4>Renaming and moving files:</h4>
+                <p>When a file is renamed, at OS level, git considers it as a file delted and new file added. And it wont be in staging area. This adds another step of moving of files in to staging area using
+                    <code>git add filename</code>. To avoid this, we can rename files using git.</p>
+                <code>
+                    <pre>
+            git mv oldname.txt newname.txt
+                </pre>
+                </code>
             </article>
         </section>
 
