@@ -168,6 +168,67 @@
             git mv oldname.txt newname.txt
                 </pre>
                 </code>
+                <h4>Deleting files</h4>
+                <p>Similar to renaming, files can also be deleted using git and save an extra step using</p>
+                <code>
+                    <pre>
+            git rm filename
+            # -r and -f options apply.
+            <em>Note: Changes made before commit wont be saved.</em>
+                </pre>
+                </code>
+                <h4>History:</h4>
+                <p>
+                    <code>
+                        <pre>git log</pre>
+                    </code>
+                    command is used to display the commit history. Some important options are:</p>
+                <ul>
+                    <li>
+                        <code>
+                            <pre>git log --abbrev-commit</pre>
+                        </code>
+                        - Displays all commits with a shorter commit ID
+                    </li>
+                    <li>
+                        <code>
+                            <pre>git log --oneline --graph --decorate</pre>
+                        </code>
+                        - More human readable form.
+                    </li>
+                    <li>
+                        <code>
+                            <pre>git log abbreCommit1...abbreCommit2</pre>
+                        </code>
+                        - Displays commits between the abbreviated commit IDs provided (range).
+                    </li>
+                    <li>
+                        <code>
+                            <pre>git log --since="3 days ago"</pre>
+                        </code>
+                        - Displays commits from the last 3 days. 3 can be any number.
+                    </li>
+                    <li>
+                        <code>
+                            <pre>git log -- filename</pre>
+                        </code>
+                        - Displays commits specific to file with name filename.
+                    </li>
+                    <li>
+                        <code>
+                            <pre>git log --follow -- filename</pre>
+                        </code>
+                        - Follows renames / changes for a specific file with name filename.
+                    </li>
+                    <li>
+                        <code>
+                            <pre>git show fullcommitID</pre>
+                        </code>
+                        - Shows complete information on the particular commit.
+                    </li>
+                </ul>
+                <h4>Aliases:</h4>
+
             </article>
         </section>
 
