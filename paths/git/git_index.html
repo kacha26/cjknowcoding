@@ -247,30 +247,42 @@
                     <code>
                         <pre>
             git branch branchname
-            </pre>
+                     </pre>
                     </code>
-                </ul>
-                <li>Checking out to a branch</li>
-                <code>
-                    <pre>
+                    <li>Checking out to a branch</li>
+                    <code>
+                        <pre>
             git checkout branchname
             #To create a new branch and checkout to it
             git checkout -b newbranch
             </pre>
-                </code>
+                    </code>
 
-                <li>Renaming a branch</li>
-                <code>
-                    <pre>
+                    <li>Renaming a branch</li>
+                    <code>
+                        <pre>
             git branch -m oldname newname
             </pre>
-                </code>
-                <li>To delete a branch, you have to be on a different branch first. Then the command</li>
-                <code>
-                    <pre>
+                    </code>
+                    <li>To delete a branch, you have to be on a different branch first. Then the command</li>
+                    <code>
+                        <pre>
             git branch -d branchname
             </pre>
-                </code>
+                    </code>
+
+                    <li>Merging a branch with main</li>
+                    <code>
+                        <pre>
+            git checkout main
+            git merge branchname
+            #To preserve branch line
+            git merge branchname --no-ff
+            #When merge results in a commit
+            git merge branchname -m "apt message"
+            </pre>
+                    </code>
+                </ul>
             </article>
         </section>
 
