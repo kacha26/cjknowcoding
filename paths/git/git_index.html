@@ -284,6 +284,24 @@
                     </code>
                 </ul>
             </article>
+            <article class="rebase">
+                <h3>Rebasing:</h3>
+                <p>Rebasing a branch is basically syncing the branch with main and getting all the changes on main to the current branch. For that, git will first rewind all the changes on current branch, apply the changes from main branch on to current branch and then reapply the changes made on the current branch.</p>
+                <code>
+                    <pre>
+            git rebase main 
+            #To abort a rebase
+            git rebase --abort 
+                </pre>
+                </code>
+                <p>If the local repo has to be updated with the remote repo changes just like rebasing</p>
+                <code>
+                    <pre>
+            git fetch origin main
+            git pull --rebase origin main
+            </pre>
+                </code>
+            </article>
         </section>
 
     </body>
