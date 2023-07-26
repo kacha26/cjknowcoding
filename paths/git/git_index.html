@@ -232,6 +232,46 @@
                 </p>
 
             </article>
+            <article class="branches">
+                <h3>Branching:</h3>
+                <ul>
+                    <li>To list all the available branches</li>
+                    <code>
+                        <pre>
+            git branch
+            git branch -l
+            git branch -a
+                    </pre>
+                    </code>
+                    <li>Creating a new branch</li>
+                    <code>
+                        <pre>
+            git branch branchname
+            </pre>
+                    </code>
+                </ul>
+                <li>Checking out to a branch</li>
+                <code>
+                    <pre>
+            git checkout branchname
+            #To create a new branch and checkout to it
+            git checkout -b newbranch
+            </pre>
+                </code>
+
+                <li>Renaming a branch</li>
+                <code>
+                    <pre>
+            git branch -m oldname newname
+            </pre>
+                </code>
+                <li>To delete a branch, you have to be on a different branch first. Then the command</li>
+                <code>
+                    <pre>
+            git branch -d branchname
+            </pre>
+                </code>
+            </article>
         </section>
 
     </body>
