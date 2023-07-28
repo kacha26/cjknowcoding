@@ -357,10 +357,29 @@
             git push origin :tagname 
                 </pre></code>
             </ol>
+            <article class="reset">
+                <h3>Reset and Reflog:</h3>
+                <ul>
+                    <li>To reset the previous commits</li>
+                    <code><pre>
+            git reset HEAD^
+            # To reset multiple commits
+            git reset HEAD^n            # n is the number of commits to reset
+                <li>To list all the commits and resets</li> <code><pre>
+            git reflog </pre></code>
+                <li>To go back on resets</li>
+                <code><pre>
+            git reset reflogIDabbrev
+            # Or
+            git reset head@{n}          # n is from reflog 
+                </pre></code>
+                </ul>
             </article>
-
-        </article>
         </section>
+        <footer>
+            <h3>I have learnt git from Mr. Jason Taylor, through his Udemy course: Git Complete: The definitive, step-by-step guide to Git
+</h3>
+        </footer>
 
     </body>
 </html>
