@@ -132,6 +132,8 @@
                     <code>
                         <pre>
             git commit -m "Any apt message"
+            # To amend the commit
+            git commit --amend
                   </pre>
                     </code>
 
@@ -302,6 +304,62 @@
             </pre>
                 </code>
             </article>
+        <!-- article with class stashings -->
+        <article class="stashings">
+            <h3>Stashings:</h3>
+            <p>Stashing in git is used to save a work inprogress and make the working tree clean temporarily so as to work on a different file. The stashed file will not be displayed in git status and lets you work on a different file. Once, the user finishes working on other files, he can bring in the stashed file and work on it.</p>
+            <code><pre>
+            git stash
+            #For multiple stashes
+            git stash save "stash name"
+            # To stash untracked files
+            git stash -u
+            git stash apply
+            git stash list
+            git stash drop
+            # Apply and drop can be done in one command.
+            git stash pop
+            # When there are multiple stashes - n stashes
+            git stash list
+            git stash show stash@{0} #0-n number can be used.
+            git stash apply stash@{0} #0-n number can be used
+            git stash drop stash@{0} #0-n number can be used
+            git stash clear
+            # To move the stash to a different branch
+            git stash branch newbranchname 
+            </pre></code>
+            <!-- article for tagging -->
+            <article class="tagging">
+                <p>Tagging is just like a label that can be added to commit so as to represent some milestones etc. Tag are 2 types:</p>
+            <ol>
+                <li><em>Light weight tags:</em></li>
+                <code><pre>
+            git tag tagname
+            git tag tagname -m "tag mesage"
+            git tag --list
+            git show tagname
+            git tag --delete tagname
+                </pre></code>
+                <li><em>Annotated tags:</em></li>
+                <code><pre>
+            git tag -a tagname
+            # Differece between tags
+            git diff tag1 tag2
+            # To tag a previous commit
+            git tag -a tagname commitidabbrev
+            # To change the commit associated with a tag
+            git tag -a tagname -f correctcommitidabbrev
+            # To push tag to repository
+            git push origin tagname
+            # Push all tags to the repository
+            git push origin main --tags
+            # To not push a tag to a repository
+            git push origin :tagname 
+                </pre></code>
+            </ol>
+            </article>
+
+        </article>
         </section>
 
     </body>
