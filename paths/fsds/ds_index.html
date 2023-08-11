@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL Basics</title>
+    <link rel="stylesheet" href="styles/basic.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>CJ knows SQL</h1>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Learning Paths</a></li>
+          <li><a href="">Certifications</a></li>
+          <li><a href="">About us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="welcome">
+      <article class="welcome">
+        <h2>
+          Welcome everyone to your <em>the</em> guide to the basics of SQL...
+        </h2>
+      </article>
+    </section>
+    <section class="intro">
+      <h3>General Database concepts:</h3>
+      <ol>
+        <li>
+          <em
+            ><strong>Instance:</strong> An instance is an a installation of a
+            SQL Server. Every time a SQL server is created and SQL is installed
+            on it, its a new instance of SQL. Each instance has a unique name on
+            the network.</em
+          >
+        </li>
+        <li>
+          <em
+            ><strong>Database:</strong> Organised collection of data. Its a
+            container to store and organise data.
+          </em>
+        </li>
+        <li>
+          <em
+            ><strong>Table:</strong> A collection of data which is organised
+            into rows and columns.</em
+          >
+        </li>
+        <li>
+          <em
+            ><strong>Schema:</strong> Is a physical grouping of tables in a
+            logical way.</em
+          >
+        </li>
+        <li>
+          <em
+            ><strong>View:</strong> Views are like virtual tables that combine
+            different selections of rows and columns.</em
+          >
+        </li>
+      </ol>
+    </section>
+    <section class="querying">
+      <h3>Querying and SELECT statement:</h3>
+      <h4>Literal Select Statements</h4>
+      <pre><code>
+        SELECT 'Kalicharan'
+        SELECT 'Kali', 'Charan', 'CJ'
+        SELECT (2+5)-(12/4)+(5*12)
+      </code></pre>
+      <h4>Basic Select statement:</h4>
+      <pre><code>
+        SELECT col1, col2, col3 ...., coln FROM database.schema.table
+    
+        /*Specifying database name is not necessary, if it is same as the connected database. Following examples are from a table Person in the schema Person
+        SELECT Firstname, Lastname FROM Person.Person
+        SELECT TOP 100 Firstname, Lastname FROM Person.Person
+        SELECT TOP 10 PERCENT Firstname, Lastname FROM Person.Person
+        SELECT TOP 10 PERCENT Firstname AS [Given Name], Lastname AS "Sur Name" FROM Person.Person
+        SELECT TOP 10 * FROM Person.Person
+
+      </code></pre>
+      <h3>The WHERE clause:</h3>
+      <p>
+        WHERE clause is used to filter the rows of data based on some criteria.
+      </p>
+      <pre><code>
+        SELECT col1, col2, col3 ...., coln FROM database.schema.table WHERE somecolumn someComparisionOperator someValue
+
+        SELECT * FROM Production.product WHERE ListPrice > 10
+      </code></pre>
+    </section>
+    <section class="prenext">
+      <a href="#">Home</a>
+      <a href="#">Next</a>
+    </section>
+    <aside>
+      <ul>
+        <li><a href="#">SQL Home</a></li>
+      </ul>
+    </aside>
+    <footer>
+      <h3>
+        I have learnt SQL from
+        <em>Mr. Brewster Knowlton</em>
+        through his awesome course on Udemy - Microsoft SQL for Beginners
+      </h3>
+      <p>
+        This is course is very brief but can help you get started with SQL. This
+        course is not complete but have all the concepts that you need to
+        understand the workflow of using databases. It covers 100% of the tasks
+        that will be used 90% times while working with databases. Also this
+        course will provide the basement for building further advanced SQL
+        knowledge.
+      </p>
+      <p>
+        This Tutorials is just a personal practice but still have the content
+        necessary for readers to get started with SQL.
+      </p>
+    </footer>
+  </body>
+</html>
