@@ -27,19 +27,34 @@
    <section class="where">
     <article>
 <h3>The WHERE clause:</h3>
-<p></p>
+<p>The WHERE clause allows the user to filter the data rows using a specification.</p>
+<pre><code>
+SELECT col1, col2, col3 .... coln FROM Schema.table WHERE somecolumn someoperator somevalue
+
+/*Operators: =,<=,>=,<> */
+
+MariaDB [hr]> SELECT first_name AS 'Name of Dude', job_title AS 'Working as', office_id AS 'Working at' FROM employees WHERE office_id = 5;
++--------------+---------------------+------------+
+| Name of Dude | Working as          | Working at |
++--------------+---------------------+------------+
+| Theresa      | Food Chemist        |          5 |
+| Estrellita   | Staff Accountant IV |          5 |
+| Ivy          | Structural Engineer |          5 |
++--------------+---------------------+------------+
+3 rows in set (0.000 sec)
+</code></pre>
     </article>
 
         
       
    </section> 
     <section class="prenext">
-      <a href="../ds_index.html">Prev</a>
+      <a href="../sql_index.html">Prev</a>
       <a href="#">Next</a>
     </section>
     <aside>
       <ul>
-        <li><a href="../ds_index.html">SQL Home</a></li>
+        <li><a href="../sql_index.html">SQL Home</a></li>
         <li><a href="#">WHERE Clause</a></li>
       </ul>
     </aside>
