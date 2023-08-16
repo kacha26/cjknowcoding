@@ -72,39 +72,97 @@
       <h3>Querying and SELECT statement:</h3>
       <h4>Literal Select Statements</h4>
       <pre><code>
-        SELECT 'Kalicharan'
-        SELECT 'Kali', 'Charan', 'CJ'
-        SELECT (2+5)-(12/4)+(5*12)
+MariaDB [(none)]> SELECT 'CJ';
++----+
+| CJ |
++----+
+| CJ |
++----+
+1 row in set (0.000 sec)
+
+MariaDB [(none)]> SELECT 'KALI','CHARAN','CJ';
++------+--------+----+
+| KALI | CHARAN | CJ |
++------+--------+----+
+| KALI | CHARAN | CJ |
++------+--------+----+
+1 row in set (0.000 sec)
+
+MariaDB [(none)]> SELECT (2*5)+(4-6)+(12/5);
++--------------------+
+| (2*5)+(4-6)+(12/5) |
++--------------------+
+|            10.4000 |
++--------------------+
+1 row in set (0.002 sec)
       </code></pre>
       <h4>Basic Select statement:</h4>
       <pre><code>
-        SELECT col1, col2, col3 ...., coln FROM database.schema.table
+SELECT col1, col2, col3 ...., coln FROM database.schema.table
     
-        /*Specifying database name is not necessary, if it is same as the connected database. Following examples are from a table Person in the schema Person
-        SELECT Firstname, Lastname FROM Person.Person
-        SELECT TOP 100 Firstname, Lastname FROM Person.Person
-        SELECT TOP 10 PERCENT Firstname, Lastname FROM Person.Person
-        SELECT TOP 10 PERCENT Firstname AS [Given Name], Lastname AS "Sur Name" FROM Person.Person
-        SELECT TOP 10 * FROM Person.Person
+/*Specifying database name is not necessary, if it is same as the connected database. Following examples are from a table Person in the schema Person
+SELECT Firstname, Lastname FROM Person.Person
+SELECT TOP 100 Firstname, Lastname FROM Person.Person
+SELECT TOP 10 PERCENT Firstname, Lastname FROM Person.Person
+SELECT TOP 10 PERCENT Firstname AS [Given Name], Lastname AS "Sur Name" FROM Person.Person
+SELECT TOP 10 * FROM Person.Person
+MariaDB [hr]> select first_name, last_name  from employees;
++------------+------------+
+| first_name | last_name  |
++------------+------------+
+| D'arcy     | Nortunen   |
+| Yovonnda   | Magrannell |
+| Sayer      | Matterson  |
+| Mindy      | Crissil    |
+| Keriann    | Alloisi    |
+| Alaster    | Scutchin   |
+| North      | de Clerc   |
+| Elladine   | Rising     |
+| Nisse      | Voysey     |
+| Guthrey    | Iacopetti  |
+| Kass       | Hefferan   |
+| Virge      | Goodrum    |
+| Mirilla    | Janowski   |
+| Lynde      | Aronson    |
+| Mildrid    | Sokale     |
+| Hazel      | Tarbert    |
+| Cole       | Kesterton  |
+| Theresa    | Binney     |
+| Estrellita | Daleman    |
+| Ivy        | Fearey     |
++------------+------------+
+20 rows in set (0.000 sec)
+MariaDB [hr]> SELECT * FROM employees LIMIT 4;
++-------------+------------+------------+---------------------+--------+------------+-----------+
+| employee_id | first_name | last_name  | job_title           | salary | reports_to | office_id |
++-------------+------------+------------+---------------------+--------+------------+-----------+
+|       33391 | D'arcy     | Nortunen   | Account Executive   |  62871 |      37270 |         1 |
+|       37270 | Yovonnda   | Magrannell | Executive Secretary |  63996 |       NULL |        10 |
+|       37851 | Sayer      | Matterson  | Statistician III    |  98926 |      37270 |         1 |
+|       40448 | Mindy      | Crissil    | Staff Scientist     |  94860 |      37270 |         1 |
++-------------+------------+------------+---------------------+--------+------------+-----------+
+4 rows in set (0.000 sec)
+MariaDB [hr]> SELECT first_name AS "Given Name", last_name AS "Sur Name" FROM employees LIMIT 4;
++------------+------------+
+| Given Name | Sur Name   |
++------------+------------+
+| D'arcy     | Nortunen   |
+| Yovonnda   | Magrannell |
+| Sayer      | Matterson  |
+| Mindy      | Crissil    |
++------------+------------+
+4 rows in set (0.000 sec)
 
-      </code></pre>
-      <h3>The WHERE clause:</h3>
-      <p>
-        WHERE clause is used to filter the rows of data based on some criteria.
-      </p>
-      <pre><code>
-        SELECT col1, col2, col3 ...., coln FROM database.schema.table WHERE somecolumn someComparisionOperator someValue
-
-        SELECT * FROM Production.product WHERE ListPrice > 10
       </code></pre>
     </section>
     <section class="prenext">
       <a href="#">Home</a>
-      <a href="#">Next</a>
+      <a href="pages/where.html">Next</a>
     </section>
     <aside>
       <ul>
-        <li><a href="#">SQL Home</a></li>
+        <li><a href="pages/where.html">SQL Home</a></li>
+        <li><a href="#">WHERE Clause</a></li>
       </ul>
     </aside>
     <footer>
