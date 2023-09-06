@@ -8,6 +8,7 @@ th {
 table caption {
   font-style: italic;
 }
-img {
+img,
+table {
   width: 700px;
 }
