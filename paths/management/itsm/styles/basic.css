@@ -1,0 +1,14 @@
+body {
+  font-family: "Playfair Display", serif;
+}
+table td,
+th {
+  border: 2px solid black;
+}
+table caption {
+  font-style: italic;
+}
+img,
+table {
+  width: 700px;
+}
