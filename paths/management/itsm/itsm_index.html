@@ -211,6 +211,208 @@
               </li>
               <li>Gather information through RCA and</li>
             </ul>
+            <h4>Process type:</h4>
+            <ul>
+              <li>
+                <strong>Proactive: </strong>Identifying and solving problems and
+                known errors before the incident occurs.
+              </li>
+              <li>
+                <strong>Reactive:</strong> Solving problems in response to one
+                or more incidents.
+              </li>
+            </ul>
+            <h4>Problem management life cycle:</h4>
+            <ol>
+              <li>
+                Probem <em>Trigger</em>: The problem trigger can happen either
+                by service desk or incident manager identifying the problem or a
+                problem manager / automated process proactively finding out the
+                problem before the incident occurs. The supplier can also inform
+                the problem manager upfront that a potential error can exist
+                with the provided hardware or software.
+              </li>
+              <li>
+                If a work around is already in place, then the problem manager
+                refers to the known errors in DB, apply it and then close the
+                problem. If there is no work around, then first the problem
+                manager will assess the priority and category.
+              </li>
+              <li>
+                Problem manager then conducts RCA and discovers what lead to the
+                recurrence of the incidents and the primary source of the
+                problem.
+              </li>
+              <li>
+                Problem manager applies the fix and other process managers
+                support problem manager since its primarily the problem
+                manager's responcibility.
+              </li>
+              <li>Problem manager marks the problem as resolved.</li>
+              <li>
+                Post confirmation, the problem manager closes the problem.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>Change management:</h3>
+            <h4>Goal:</h4>
+            <ul>
+              <li>
+                Change management is the process responcible for controlling the
+                life cycle of all changes and works to enable beneficial changes
+                to be made with minimal disruption to IT services.
+              </li>
+            </ul>
+            <h4>Objective:</h4>
+            <ul>
+              <li>
+                The objective of change management is to ensure that the changes
+                are recorded, assessed, authorized, prioritized, planned,
+                tested, implemented, documented and reviewed in a controlled
+                manner.
+              </li>
+            </ul>
+            <h4>Categories:</h4>
+            <ol>
+              <li>
+                <strong>Normal</strong>: Requires approval from a predefined
+                persona or Change advisory board (CAB).
+              </li>
+              <li>
+                <strong>Standard</strong>: Requires no approval and are the most
+                common changes that an organisation can deal with.
+              </li>
+              <li>
+                <strong>Emergency</strong>: Unplanned and require authorisation
+                from CAB.
+              </li>
+            </ol>
+            <h4>Change management life cycle:</h4>
+            <ol>
+              <li>
+                Change request is identified. The <em>Trigger</em> can be from
+                request fulfilment, incident management, problem management or
+                event management, where there exists a need for change in the IT
+                services.
+              </li>
+              <li>
+                Request for change (RFC) is raised by change manager. The change
+                manager should ask the seven Rs:
+                <ol>
+                  <li>Who <em>Raised</em> the request?</li>
+                  <li>What is the <em>Reason</em> behind the change?</li>
+                  <li>
+                    What is the expected <em>Return</em> required from the
+                    change?
+                  </li>
+                  <li>
+                    What are the <em>Risks</em> involved in the requested
+                    change?
+                  </li>
+                  <li>
+                    Who is <em>responcible</em> to create, test and implement
+                    the change phases?
+                  </li>
+                  <li>
+                    How many <em>Resources </em>are required to deliver the
+                    change?
+                  </li>
+                  <li>
+                    What is the <em>Relation </em>between suggested change and
+                    other changes.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                Change request is assessed by change manager, depending on the
+                priority, category, sub-category etc.
+              </li>
+              <li>
+                If the change is a normal or emergency one, then autherisation
+                for change authority or CAB is required or else it is skipped
+                and the change manager then sceduled the change. (Since the
+                change impacts the IT services, the change manager should
+                consider the timeframe so as to have least impact on IT
+                services.)
+              </li>
+              <li>The involved team will implement the change.</li>
+              <li>
+                The implemented change is reviewed to determine if the
+                implementation is successful.
+              </li>
+              <li>
+                Close the process. (Or cancel if the change is no longer
+                required.)
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>Configuration management database (CMDB):</h3>
+            <p>
+              CMDB is the database used by the organisations to store
+              information about its hardware and software assets commonly
+              reffered to as Configuration items (CIs). It not only holds the
+              information, but also holds the relationships the exist between
+              different assets.
+            </p>
+            <p>
+              <em>Note: </em>A CI can be a hardware, software, document,
+              location, service etc.
+            </p>
+            <h4>Process:</h4>
+            <ol>
+              <li>Identify the need for new CI</li>
+              <li>
+                Check where the new CI fits, class/category. Existing CI class
+                or new CI class that should be created.
+              </li>
+              <li>
+                Create the CI:
+                <ul>
+                  <li>
+                    <em>Discover: </em>Tool that automatically discovers the
+                    existing hardware and software in the organisation and
+                    automatically populate the found information in the CMDB.
+                    Best suited for complex organisations.
+                  </li>
+                  <li>
+                    <em>External source: </em>Importing from an external source
+                    like a DB or even an excel file.
+                  </li>
+                  <li>
+                    <em>Manual: </em>Creating the CI manually. It is time
+                    consuming and only a handful of CIs can be created manually.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Add relationships to other CIs so that complete picture on the
+                schema becomes clear.
+              </li>
+              <li>
+                Health check: CMDB is monitored and maintained upto date
+                <ul>
+                  <li>
+                    <em>Completeness: </em>Whether all required fields are
+                    populated.
+                  </li>
+                  <li>
+                    <em>Correctness: </em>CIs are tested against standard date
+                    integrity roles to identify the duplicates and orphans if
+                    any.
+                  </li>
+                  <li><em>Compliance: </em>Adherence to predefined process.</li>
+                  <li>
+                    <em>Relatioships: </em>Look for duplicate relationships or
+                    identify orphans.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <li>
+              <h3>knowledge management:</h3>
+            </li>
           </li>
         </ol>
       </article>
