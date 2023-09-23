@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITSM Training</title>
+    <link rel="stylesheet" href="styles/basic.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display&family=Qwitcher+Grypen&family=Raleway&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">Playground</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </nav>
+      <h1>ITSM - Information Technology Service Management</h1>
+    </header>
+    <section class="content">
+      <article class="pillers">
+        <h2>The 4 pillers of ITSM:</h2>
+        <ol>
+          <li>
+            <strong>Users: </strong>Employees and customers that use IT services
+          </li>
+          <li>
+            <strong>Services: </strong>Applications, hardware and infrastructure
+            provided by IT team
+          </li>
+          <li><strong>Quality: </strong>Effectiveness and efficiency</li>
+          <li><strong>Cost: </strong>Getting the most of an IT budget</li>
+        </ol>
+      </article>
+      <article class="processes">
+        <h2>ITSM Core Processes:</h2>
+        <ol>
+          <li>
+            <h3>Incident management:</h3>
+            <p>
+              <strong>Incident:</strong> An incident is considered to be any
+              event that could lead to a unplanned interruption of IT services
+              or reduction in quality for the same.
+            </p>
+            <p>
+              The objective of incident management is to restore a normal
+              service of operation (in accordance with SLA) as soon as possible
+              and to minimize the impact on the business operations. Thus
+              ensuring the best possible levels of service quality and
+              availability are maintained.
+            </p>
+            <p>
+              <strong>Major Incident Management: </strong> It is an incident
+              that results in significant disruption to the business and demands
+              a response beyond the routine incident management process. Major
+              incidents have a seperate procedure with smaller timescales and
+              urgency that is required to accelerate the resolution process for
+              incidents with high business impact. It is an incident with high
+              priority that impacts multiple users, fincancial departments,
+              critical systems, production plans etc.
+            </p>
+            <h4>Incident life cycle:</h4>
+            <ol>
+              <li>
+                End user will report in an incident through email/chat/call.
+              </li>
+              <li>
+                Help desk raises the incident in ITSM tool based on the end
+                user's input.
+              </li>
+              <li>
+                Help desk captures the crucial information related to the
+                incident such as impact, urgency and location.
+              </li>
+              <li>
+                Help desk will search for appropriate knowledge article (KA) and
+                assign the incident to the relevant assignment group.
+              </li>
+              <li>
+                Assignee will trouble shoot the incident by following the KA.
+              </li>
+              <li>
+                Once addressed, the assignee, will change the state of the
+                incident to resolved and fill in the resolution notes.
+              </li>
+              <li>
+                If the end user does not confirm the resolution, he can reopen
+                and the flow moves to step 5. If end user doesn't respond, the
+                incident will be automatically closed in a predefined timeframe.
+              </li>
+              <p>
+                <em>Note: </em>Incidents in resolved state can be reopened but
+                not the incidents in closed state.
+              </p>
+            </ol>
+            <h4>Major incident life cycle:</h4>
+            <ol>
+              <li>
+                End user will report the incident through email/chat/call.
+              </li>
+              <li>
+                Help desk raises the incident in ITSM tool based on the end user
+                input.
+              </li>
+              <li>
+                Help desk realises it is an major incident (MI) and reports to
+                Major Incident Manager (MIM).
+              </li>
+              <li>
+                MIM realises it is not suitable for MI and follow regular IM
+                process. If found suitable, the MIM will raise the priority and
+                assign the MI to the appropriate group.
+              </li>
+              <li>
+                Post assignment, the MIM will send out communication to both
+                internal and to the customers and if needed he will create a
+                bridge call with the teams that are working on the MI.
+              </li>
+              <li>
+                The MIM will constantly follow up with the involved teams and
+                keep the stakeholders informaed through out the MI life cycle.
+              </li>
+              <li>
+                Post resolution confirmation, the MI will be marked as resolved.
+                It will be reported to problem manager to perform root cause
+                analysis (RCA) to contribute to CSI initiative.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>Request fulfillment:</h3>
+            <p>
+              The <em>Request fulfillment</em> is the process responcible for
+              managing the life cycle of all service requests from the users.
+              These service requests can vary from an access, a new laptop or a
+              software installation.
+            </p>
+            <p>
+              Not all organizations have this process in place, however, if
+              number of service requests is a large one, it would be smart to
+              handle service requests as a seperate work stream. Examples:
+              password reset, access to a shared folder, installing an
+              unauthorised software etc.
+            </p>
+            <h4>Request fulfillment life cycle:</h4>
+            <ol>
+              <li>
+                End user initiates the service request via service now
+                <ul>
+                  <li>The main ticket itself is called a <em>request</em></li>
+                  <li>
+                    What the user is asking for is called a
+                    <em>requested item</em>
+                  </li>
+                  <li>
+                    What the agents and suppliers are doing to fulfill the
+                    request are called <em>tasks</em>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Depending on whether the request need any approval or not, it
+                moved to 3rd or 4th step
+              </li>
+              <li>Approvers approves the request</li>
+              <li>Transverse team checks stock</li>
+              <li>
+                Transverse team orders and awaits the delivery of the product
+              </li>
+              <li>Transverse team configures the requested item</li>
+              <li>
+                Transverse team delivers the requested item and moves the state
+                to completed / closed
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>Problem management:</h3>
+            <p>
+              A <em>Problem</em> is an unknown root cause of one or more
+              existing and potential incidents. Problems may sometimes be
+              identified because of multiple incidents that exhibit common
+              symptoms
+            </p>
+            <h4>Goals:</h4>
+            <ul>
+              <li>
+                Minimize the adverse impact of the incidents and problems on the
+                business, that is caused by errors within services and
+                technology
+              </li>
+              <li>
+                Prevent the recurrence of incidents releated to same error
+                through RCA of the incidents and initiate actions to correct or
+                improve the situation
+              </li>
+            </ul>
+            <h4>Objectives:</h4>
+            <ul>
+              <li>Discover and remove errors from the infrastructure</li>
+              <li>
+                To assure delivery of highest possible level of stability in IT
+                services by finding and eliminating errors
+              </li>
+              <li>Gather information through RCA and</li>
+            </ul>
+            <h4>Process type:</h4>
+            <ul>
+              <li>
+                <strong>Proactive: </strong>Identifying and solving problems and
+                known errors before the incident occurs.
+              </li>
+              <li>
+                <strong>Reactive:</strong> Solving problems in response to one
+                or more incidents.
+              </li>
+            </ul>
+            <h4>Problem management life cycle:</h4>
+            <ol>
+              <li>
+                Probem <em>Trigger</em>: The problem trigger can happen either
+                by service desk or incident manager identifying the problem or a
+                problem manager / automated process proactively finding out the
+                problem before the incident occurs. The supplier can also inform
+                the problem manager upfront that a potential error can exist
+                with the provided hardware or software.
+              </li>
+              <li>
+                If a work around is already in place, then the problem manager
+                refers to the known errors in DB, apply it and then close the
+                problem. If there is no work around, then first the problem
+                manager will assess the priority and category.
+              </li>
+              <li>
+                Problem manager then conducts RCA and discovers what lead to the
+                recurrence of the incidents and the primary source of the
+                problem.
+              </li>
+              <li>
+                Problem manager applies the fix and other process managers
+                support problem manager since its primarily the problem
+                manager's responcibility.
+              </li>
+              <li>Problem manager marks the problem as resolved.</li>
+              <li>
+                Post confirmation, the problem manager closes the problem.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>Change management:</h3>
+            <h4>Goal:</h4>
+            <ul>
+              <li>
+                Change management is the process responcible for controlling the
+                life cycle of all changes and works to enable beneficial changes
+                to be made with minimal disruption to IT services.
+              </li>
+            </ul>
+            <h4>Objective:</h4>
+            <ul>
+              <li>
+                The objective of change management is to ensure that the changes
+                are recorded, assessed, authorized, prioritized, planned,
+                tested, implemented, documented and reviewed in a controlled
+                manner.
+              </li>
+            </ul>
+            <h4>Categories:</h4>
+            <ol>
+              <li>
+                <strong>Normal</strong>: Requires approval from a predefined
+                persona or Change advisory board (CAB).
+              </li>
+              <li>
+                <strong>Standard</strong>: Requires no approval and are the most
+                common changes that an organisation can deal with.
+              </li>
+              <li>
+                <strong>Emergency</strong>: Unplanned and require authorisation
+                from CAB.
+              </li>
+            </ol>
+            <h4>Change management life cycle:</h4>
+            <ol>
+              <li>
+                Change request is identified. The <em>Trigger</em> can be from
+                request fulfilment, incident management, problem management or
+                event management, where there exists a need for change in the IT
+                services.
+              </li>
+              <li>
+                Request for change (RFC) is raised by change manager. The change
+                manager should ask the seven Rs:
+                <ol>
+                  <li>Who <em>Raised</em> the request?</li>
+                  <li>What is the <em>Reason</em> behind the change?</li>
+                  <li>
+                    What is the expected <em>Return</em> required from the
+                    change?
+                  </li>
+                  <li>
+                    What are the <em>Risks</em> involved in the requested
+                    change?
+                  </li>
+                  <li>
+                    Who is <em>responcible</em> to create, test and implement
+                    the change phases?
+                  </li>
+                  <li>
+                    How many <em>Resources </em>are required to deliver the
+                    change?
+                  </li>
+                  <li>
+                    What is the <em>Relation </em>between suggested change and
+                    other changes.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                Change request is assessed by change manager, depending on the
+                priority, category, sub-category etc.
+              </li>
+              <li>
+                If the change is a normal or emergency one, then autherisation
+                for change authority or CAB is required or else it is skipped
+                and the change manager then sceduled the change. (Since the
+                change impacts the IT services, the change manager should
+                consider the timeframe so as to have least impact on IT
+                services.)
+              </li>
+              <li>The involved team will implement the change.</li>
+              <li>
+                The implemented change is reviewed to determine if the
+                implementation is successful.
+              </li>
+              <li>
+                Close the process. (Or cancel if the change is no longer
+                required.)
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>Configuration management database (CMDB):</h3>
+            <p>
+              CMDB is the database used by the organisations to store
+              information about its hardware and software assets commonly
+              reffered to as Configuration items (CIs). It not only holds the
+              information, but also holds the relationships the exist between
+              different assets.
+            </p>
+            <p>
+              <em>Note: </em>A CI can be a hardware, software, document,
+              location, service etc.
+            </p>
+            <h4>Process:</h4>
+            <ol>
+              <li>Identify the need for new CI</li>
+              <li>
+                Check where the new CI fits, class/category. Existing CI class
+                or new CI class that should be created.
+              </li>
+              <li>
+                Create the CI:
+                <ul>
+                  <li>
+                    <em>Discover: </em>Tool that automatically discovers the
+                    existing hardware and software in the organisation and
+                    automatically populate the found information in the CMDB.
+                    Best suited for complex organisations.
+                  </li>
+                  <li>
+                    <em>External source: </em>Importing from an external source
+                    like a DB or even an excel file.
+                  </li>
+                  <li>
+                    <em>Manual: </em>Creating the CI manually. It is time
+                    consuming and only a handful of CIs can be created manually.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Add relationships to other CIs so that complete picture on the
+                schema becomes clear.
+              </li>
+              <li>
+                Health check: CMDB is monitored and maintained upto date
+                <ul>
+                  <li>
+                    <em>Completeness: </em>Whether all required fields are
+                    populated.
+                  </li>
+                  <li>
+                    <em>Correctness: </em>CIs are tested against standard date
+                    integrity roles to identify the duplicates and orphans if
+                    any.
+                  </li>
+                  <li><em>Compliance: </em>Adherence to predefined process.</li>
+                  <li>
+                    <em>Relatioships: </em>Look for duplicate relationships or
+                    identify orphans.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <li>
+              <h3>knowledge management:</h3>
+            </li>
+          </li>
+        </ol>
+      </article>
+    </section>
+    <section class="prext">
+      <a href="../management_index.html">Home</a>
+      <a href="pages/domain1.html">Next</a>
+    </section>
+    <aside>
+      <ul>
+        <li><a href="#">About the certification exam</a></li>
+        <li><a href="pages/domain1.html"></a></li>
+      </ul>
+    </aside>
+    <footer>
+      <p>
+        I have learnt CAPM concepts from Mr. Joseph Phillips, Instructingcom,
+        LLC through his awesome trainig program
+        <a href="https://tm.udemy.com/course/capm-pmbok6/"
+          >CAPM® Exam Prep Seminar</a
+        >. Joseph Phillips is the best-selling author and project management
+        instructor. He has more than 25 years of experience as a project
+        management consultant, educator, technology consultant, business owner,
+        and technical writer. He has consulted as a project manager for a range
+        of businesses, including startups, hospitals, architectural firms, and
+        manufacturers.
+      </p>
+      <p>
+        The content present on this site is more like my personal notes that I
+        have prepared for CAPM certification exam. Since I have prepare from the
+        mentioned course, most of the content would be similar in presentation.
+        So, I acknowledge the original creator to be Mr. Joseph Phillips and I'm
+        only a student of his.
+      </p>
+    </footer>
+  </body>
+</html>
