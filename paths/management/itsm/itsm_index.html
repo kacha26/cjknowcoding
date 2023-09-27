@@ -347,106 +347,139 @@
               </li>
             </ol>
           </li>
+          <>
+          <h3>Configuration management database (CMDB):</h3>
+          <p>
+            CMDB is the database used by the organisations to store information
+            about its hardware and software assets commonly reffered to as
+            Configuration items (CIs). It not only holds the information, but
+            also holds the relationships the exist between different assets.
+          </p>
+          <p>
+            <em>Note: </em>A CI can be a hardware, software, document, location,
+            service etc.
+          </p>
+          <h4>Process:</h4>
+          <ol>
+            <li>Identify the need for new CI</li>
+            <li>
+              Check where the new CI fits, class/category. Existing CI class or
+              new CI class that should be created.
+            </li>
+            <li>
+              Create the CI:
+              <ul>
+                <li>
+                  <em>Discover: </em>Tool that automatically discovers the
+                  existing hardware and software in the organisation and
+                  automatically populate the found information in the CMDB. Best
+                  suited for complex organisations.
+                </li>
+                <li>
+                  <em>External source: </em>Importing from an external source
+                  like a DB or even an excel file.
+                </li>
+                <li>
+                  <em>Manual: </em>Creating the CI manually. It is time
+                  consuming and only a handful of CIs can be created manually.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Add relationships to other CIs so that complete picture on the
+              schema becomes clear.
+            </li>
+            <li>
+              Health check: CMDB is monitored and maintained upto date
+              <ul>
+                <li>
+                  <em>Completeness: </em>Whether all required fields are
+                  populated.
+                </li>
+                <li>
+                  <em>Correctness: </em>CIs are tested against standard date
+                  integrity roles to identify the duplicates and orphans if any.
+                </li>
+                <li><em>Compliance: </em>Adherence to predefined process.</li>
+                <li>
+                  <em>Relatioships: </em>Look for duplicate relationships or
+                  identify orphans.
+                </li>
+              </ul>
+            </li>
+          </ol>
           <li>
-            <h3>Configuration management database (CMDB):</h3>
+            <h3>knowledge management:</h3>
             <p>
-              CMDB is the database used by the organisations to store
-              information about its hardware and software assets commonly
-              reffered to as Configuration items (CIs). It not only holds the
-              information, but also holds the relationships the exist between
-              different assets.
-            </p>
-            <p>
-              <em>Note: </em>A CI can be a hardware, software, document,
-              location, service etc.
+              Knowledge management is responcible for gathering, analysing,
+              storing and sharing information across an organisation.
             </p>
             <h4>Process:</h4>
             <ol>
-              <li>Identify the need for new CI</li>
               <li>
-                Check where the new CI fits, class/category. Existing CI class
-                or new CI class that should be created.
+                The process starts with either End user, Help desk agent ot the
+                Knowledge manager identifying the need to update knowledge base
+                with a knowledge article which is not found or is outdated.
               </li>
               <li>
-                Create the CI:
-                <ul>
-                  <li>
-                    <em>Discover: </em>Tool that automatically discovers the
-                    existing hardware and software in the organisation and
-                    automatically populate the found information in the CMDB.
-                    Best suited for complex organisations.
-                  </li>
-                  <li>
-                    <em>External source: </em>Importing from an external source
-                    like a DB or even an excel file.
-                  </li>
-                  <li>
-                    <em>Manual: </em>Creating the CI manually. It is time
-                    consuming and only a handful of CIs can be created manually.
-                  </li>
-                </ul>
+                The knowledge article first gets asssessed and the drafted. This
+                stage is called Draft state.
               </li>
               <li>
-                Add relationships to other CIs so that complete picture on the
-                schema becomes clear.
+                The assessed knowledge article should be reviewed by either the
+                knowledge manager or by a designated approver. This stage is
+                review/approve state.
               </li>
+              <li>The knowledge article is then published.</li>
               <li>
-                Health check: CMDB is monitored and maintained upto date
-                <ul>
-                  <li>
-                    <em>Completeness: </em>Whether all required fields are
-                    populated.
-                  </li>
-                  <li>
-                    <em>Correctness: </em>CIs are tested against standard date
-                    integrity roles to identify the duplicates and orphans if
-                    any.
-                  </li>
-                  <li><em>Compliance: </em>Adherence to predefined process.</li>
-                  <li>
-                    <em>Relatioships: </em>Look for duplicate relationships or
-                    identify orphans.
-                  </li>
-                </ul>
+                When the published article is outdated, then it has to be
+                retired. This might need approval from a designated approver and
+                also can be republished in the same process as creation.
               </li>
             </ol>
-            <li>
-              <h3>knowledge management:</h3>
-<p>Knwledge managennnnntnnnnnnnnnn</p>
-            </li>
+          </li>
+          <li>
+            <h3>Service level management:</h3>
+            <p>The responcibilities of Service level management are:</p>
+            <ol>
+              <li>Negotiating service level agreements (SLAs)</li>
+              <li>
+                Ensure SLAs, Operational level agreements (OLAs) and Under
+                paying contracts (UCs) are met
+              </li>
+              <li>Conduct meetings with stakeholders to review the metrics</li>
+            </ol>
+            <h4>Process:</h4>
+            <ol>
+              <li>
+                The service provider offers service portfolio to the customer
+                and the customers provides their concerns and conditions. The
+                service provider will convince the customer by showcasing their
+                existing infrastructure which includes location, IT employees,
+                hardware, software, processes etc. Customer may want to change
+                those according to his preferences like the existing processes
+                of the customer. Then negotiations takes place and SLAs are
+                done.
+              </li>
+              <li>
+                Once SLAs are done, its service administrator's responcibility
+                to implement them by selecting type, target, table, workflow and
+                setting conditions.
+              </li>
+            </ol>
           </li>
         </ol>
       </article>
     </section>
     <section class="prext">
       <a href="../management_index.html">Home</a>
-      <a href="pages/domain1.html">Next</a>
+      <a href="../itil/itil_index.html">Next - ITIL 4 Training</a>
     </section>
-    <aside>
-      <ul>
-        <li><a href="#">About the certification exam</a></li>
-        <li><a href="pages/domain1.html"></a></li>
-      </ul>
-    </aside>
+    <aside></aside>
     <footer>
       <p>
-        I have learnt CAPM concepts from Mr. Joseph Phillips, Instructingcom,
-        LLC through his awesome trainig program
-        <a href="https://tm.udemy.com/course/capm-pmbok6/"
-          >CAPM® Exam Prep Seminar</a
-        >. Joseph Phillips is the best-selling author and project management
-        instructor. He has more than 25 years of experience as a project
-        management consultant, educator, technology consultant, business owner,
-        and technical writer. He has consulted as a project manager for a range
-        of businesses, including startups, hospitals, architectural firms, and
-        manufacturers.
-      </p>
-      <p>
-        The content present on this site is more like my personal notes that I
-        have prepared for CAPM certification exam. Since I have prepare from the
-        mentioned course, most of the content would be similar in presentation.
-        So, I acknowledge the original creator to be Mr. Joseph Phillips and I'm
-        only a student of his.
+        I have learnt ITSM from Mr. Catalin Popa, through his Udemy course
+        ServiceNow ITSM Processes.
       </p>
     </footer>
   </body>
