@@ -31,10 +31,10 @@
         <li>Customise your desktop</li>
         <li>Learn Keyboard shortcuts</li>
         <li>Using terminal for almost everything</li>
-        <li>Learn about aliases</li>
-        <li>Learn about skel</li>
         <li>Learn how to update and maintain your system</li>
         <li>Learn installing and removing applications</li>
+        <li>Learn about aliases</li>
+        <li>Learn about skel</li>
       </ol>
       <h3>Actions required:</h3>
       <ol>
@@ -65,7 +65,12 @@
               the existing wallpapers for all the workspaces. Here different
               wallpapers can be set for different workspaces.
             </li>
-            <li>Explore settings manager and change the appearance</li>
+            <li>
+              Explore settings manager and change the appearance. In session and
+              start up - Application auto start, disable variety. If not
+              disabled, it will reset the display resolution and wallpapers to
+              default on next restart.
+            </li>
           </ul>
         </li>
         <li>
@@ -122,8 +127,139 @@
             only be running in circles. So, please practice all the previously
             learnt concepts before you move forward.
           </p>
+          <p>
+            Now lets customize the terminal. Customizing in linux is done
+            through the configuration files located in .config/app folder. For
+            Alacritty, its ~/.config/alacritty. Edit alacritty.yml file and set
+            the font etc, to your liking. The options to set in .yml file are
+            well explained using comments.
+          </p>
+          <p>
+            Explore all the other directories in .config, especially the
+            autostart directory. At this point, we have the desktop completely
+            configured for your liking.
+          </p>
+        </li>
+        <li>
+          <h4>Maintaining ur system:</h4>
+          <p>
+            Now lets make your system function to your liking. For this you need
+            to know how to install, remove and update different applications on
+            your system. These applications are available individulally and in
+            groups, called Packages. These packages are mantained by a
+            <a href="https://en.wikipedia.org/wiki/Package_manager"
+              >Package manager</a
+            >. For Arch, its <a href="https://archlinux.org/pacman/">Pacman</a>.
+            Pacman keeps the system up-to-date by synchronizing package lists
+            with the master server. This server/client model also allows the
+            user to download/install packages with a simple command, complete
+            with all required dependencies. Pacman provides a
+            <a href="https://wiki.archlinux.org/title/pacman"
+              >wide variety of commands</a
+            >. Lets see the frequently used commands:
+          </p>
+          <ul>
+            <li><strong>Install:</strong></li>
+            <code>pacman -S <em>PackageName</em></code>
+            <li><strong>Remove:</strong></li>
+            <code>pacman -R <em>PackageName</em></code>
+            <li><strong>Update</strong></li>
+            <code>pacman -Syu</code>
+            <li><strong>Search for an installed package</strong></li>
+            <code>pacman -Qs <em>PackageName</em></code>
+            <li><strong>Search for package in database</strong></li>
+            <code>pacman -Ss <em>string1 string2 ...</em></code>
+          </ul>
+          <p>Now lets install some packages. Fish, exa and rofi.</p>
+          <ul>
+            <li>
+              <strong>Fish:</strong> Fish shell is a shell just like bash shell.
+              Install fish shell and make it default shell.
+              <code>chsh -s /bin/fish</code>
+            </li>
+            <li>
+              <strong>Exa</strong> Application that gives color to output of ls
+              command. Instead of ls, exa command should be used.
+            </li>
+            <li>
+              <strong>Rofi:</strong> Rofi is an application that can open
+              different applications installed and also change between the
+              windows. Create shortcuts for using rofi. super + space to open
+              rofi, alt + 1 to change window
+            </li>
+          </ul>
+          <p>
+            Install any other applications that you need like vscode or browsers
+            or anything else. At this point you can completely ditch the mouse.
+            Keep practicing the keyboard shortcuts and you will realise that it
+            is much faster and simpler to use keyboard than it looks. From now
+            on, just not to touch mouse for anything. It will take time and its
+            worth the effort.
+          </p>
+        </li>
+        <li>
+          <h4>Aliases:</h4>
+          <p>
+            An alias replaces a string that invokes a command in the Linux shell
+            with another user-defined string. Aliases are mostly used to replace
+            long commands, improving efficiency and avoiding potential spelling
+            errors. For example, lets conside our exa command. We can create an
+            alias lsa using the following command
+          </p>
+          <code
+            >alias -s lsa='exa -abFghHiMnlS@ --git --git-repos
+            --group-directories-first'</code
+          >
+          <p>
+            In the above format, you can save any command as an alias an use it
+            late. Because we have a fish shell now, alias are save using -s
+            option. But if it is bash or zsh, then we have to add the alias to
+            the .bashrc or .zshrc files. Zsh is an alternate shell with loads of
+            customizations available. Fish shell comes with all the useful
+            features out of the box. We recommend fish, and it is also a good
+            idea to explore zsh and oh my zsh if you have time.
+          </p>
+          <p>
+            <strong>Note:</strong> Before moving on any further, shutdown your
+            VM (this is your base VM from now,) and create a clone. You have all
+            the setup you need for work ready. So, just keep the VM that way and
+            create a clone. Going forward work on the clone. If you mess
+            everything up, ditch the clone and create a new clone from the base
+            VM.
+          </p>
+        </li>
+        <li>
+          <h4>Skel:</h4>
+          <p>
+            The /etc/skel folder is the skeleton of the directories that will be
+            created when new users are added. You can cd to /etc/skel and check
+            the contents. Now su root and then create new user, u1. Now check
+            the contents of /home/u1. The content of /home/u1 will be the same
+            as /etc/skel. Now cd /etc and rm -r skel or cp to take back up. No
+            cp your home directory as /etc/skel.
+          </p>
+          <code>cp -r /home/yourusername /etc/skel</code>
+          <p>
+            Now every new user you create will have the same setting as your
+            base VM. Going forward, if you want to retain content of your main
+            user to new user, then sync the /etc/skel folder again with your
+            main user directory.
+          </p>
         </li>
       </ol>
+    </section>
+    <section class="prenext">
+      <p>
+        For the next 30 days, use this VM as your daily work machine and try to
+        completely ditch the mouse. The more you work, the more problems you get
+        into, the more solutions you will find and the more knowledge you gain.
+        Poke around anything and everything. If you completely messup, ditch the
+        work VM, clone another work VM from the base VM. It is a good idea to
+        use git and git hub to save your work or any specific files. Just clone
+        VM and then repository from git hub. Now it is all about knowing whats
+        happening with your machine. Observe and learn. We will see you in
+        <a href="phase2.html">Phase 2</a>
+      </p>
     </section>
   </body>
 </html>
