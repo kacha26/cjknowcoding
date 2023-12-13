@@ -1,13 +1,66 @@
-body {
-  color: white;
-  background-color: black;
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
 }
 h1 {
-  color: rebeccapurple;
   font-size: 40px;
-  background-color: azure;
+  font-style: italic;
+  text-transform: uppercase;
 }
 
-a {
-  color: aquamarine;
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 35px;
+}
+
+h4 {
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+li {
+  font-size: 18px;
+}
+
+/* footer p { */
+/* font-size: 15px; */
+/* } */
+
+/* section header p { */
+/* font-style: italic; */
+/* } */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#cright {
+  font-weight: bold;
+  font-size: 15px;
+}
+.rat {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* aside ul { */
+/* list-style: none; */
+/* } */
+
+.rat-list {
+  list-style: none;
 }
