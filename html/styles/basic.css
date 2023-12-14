@@ -5,7 +5,15 @@ h4,
 p,
 li {
   font-family: sans-serif;
+  color: #3a3838;
 }
+
+h1,
+h2,
+h3 {
+  color: #10718a;
+}
+
 h1 {
   font-size: 40px;
   font-style: italic;
@@ -63,4 +71,14 @@ li {
 
 .rat-list {
   list-style: none;
+}
+
+.mainh,
+aside {
+  background-color: #918d8d;
+}
+
+aside {
+  border-top: 5px solid #10718a;
+  border-bottom: 5px solid #10718a;
 }
