@@ -82,3 +82,27 @@ aside {
   border-top: 5px solid #10718a;
   border-bottom: 5px solid #10718a;
 }
+
+/* .bing { */
+/* font-weight: bold; */
+/* } */
+
+li:first-child {
+  color: purple;
+}
+
+li:last-child {
+  color: palevioletred;
+}
+
+li:nth-child(2) {
+  color: greenyellow;
+}
+
+li:nth-child(even) {
+  font-style: italic;
+}
+
+li:nth-child(odd) {
+  font-weight: bold;
+}
