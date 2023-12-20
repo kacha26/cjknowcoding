@@ -106,3 +106,20 @@ li:nth-child(even) {
 li:nth-child(odd) {
   font-weight: bold;
 }
+
+a:link {
+  text-decoration: none;
+  color: #10718a;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: chartreuse;
+}
+
+a:active {
+  color: blueviolet;
+}
